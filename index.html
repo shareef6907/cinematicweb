@@ -200,6 +200,9 @@
     @keyframes scrollDown { 0% { top: -100%; } 100% { top: 100%; } }
     .reel { padding: 0 50px; margin: -6vh auto 120px; max-width: 1200px; position: relative; z-index: 20; background: #0a0a0a !important; }
     .reel-container { aspect-ratio: 21/9; background: #111 !important; border: 1px solid #2a2a2a; position: relative; overflow: hidden; cursor: pointer; }
+    #showreel-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s ease; }
+    #showreel-video.playing { opacity: 1; }
+    .reel-placeholder.hidden { opacity: 0; pointer-events: none; }
     .reel-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(135deg, #111 0%, #1a1a1a 50%, #111 100%) !important; }
     .play-btn { width: 80px; height: 80px; border: 2px solid #c9a84c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; transition: all 0.3s ease; }
     .reel-container:hover .play-btn { background: #c9a84c; transform: scale(1.05); }
@@ -361,8 +364,11 @@
   </section>
 
   <section class="reel">
-    <div class="reel-container reveal">
-      <div class="reel-placeholder">
+    <div class="reel-container reveal" id="reel-container">
+      <video id="showreel-video" playsinline preload="metadata" poster="">
+        <source src="showreel.mp4" type="video/mp4">
+      </video>
+      <div class="reel-placeholder" id="reel-placeholder">
         <div class="play-btn"></div>
         <div class="reel-label">Watch Our Showreel</div>
       </div>
@@ -624,6 +630,29 @@
       });
     }, { threshold: 0.1 });
     reveals.forEach(function(el) { observer.observe(el); });
+    
+    // Showreel video player
+    var reelContainer = document.getElementById('reel-container');
+    var reelVideo = document.getElementById('showreel-video');
+    var reelPlaceholder = document.getElementById('reel-placeholder');
+    if (reelContainer && reelVideo && reelPlaceholder) {
+      reelContainer.addEventListener('click', function() {
+        if (reelVideo.paused) {
+          reelVideo.play();
+          reelVideo.classList.add('playing');
+          reelPlaceholder.classList.add('hidden');
+          reelVideo.controls = true;
+        } else {
+          reelVideo.pause();
+        }
+      });
+      reelVideo.addEventListener('ended', function() {
+        reelVideo.classList.remove('playing');
+        reelPlaceholder.classList.remove('hidden');
+        reelVideo.controls = false;
+        reelVideo.currentTime = 0;
+      });
+    }
   </script>
 </body>
 </html>

@@ -170,7 +170,6 @@
     nav { position: fixed; top: 0; left: 0; width: 100%; padding: 28px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s ease; }
     nav.scrolled { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(20px); padding: 18px 50px; }
     .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: #f0f0f0 !important; text-decoration: none; display: flex; align-items: center; gap: 12px; }
-    .hero-logo { height: 315px; width: auto; margin: 10px 0; }
     .nav-logo .logo-mark { width: 32px; height: 32px; border: 1.5px solid #c9a84c; display: flex; align-items: center; justify-content: center; }
     .nav-logo .logo-mark::after { content: ''; width: 0; height: 0; border-left: 8px solid #c9a84c; border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
     .nav-links { display: flex; gap: 40px; list-style: none; }
@@ -180,14 +179,14 @@
     .nav-links a:hover::after { width: 100%; }
     .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #c9a84c !important; text-decoration: none; border: 1px solid #c9a84c; padding: 10px 28px; transition: all 0.3s ease; }
     .nav-cta:hover { background: #c9a84c; color: #0a0a0a !important; }
-    .hero { height: 100vh; position: relative; display: flex; align-items: flex-start; justify-content: center; overflow: hidden; background: #0a0a0a !important; padding-top: 120px; }
+    .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #0a0a0a !important; }
     .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(139,32,32,0.04) 0%, transparent 50%), linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%); }
     .hero::before, .hero::after { content: ''; position: absolute; left: 0; width: 100%; height: 12vh; background: #0a0a0a !important; z-index: 10; }
     .hero::before { top: 0; }
     .hero::after { bottom: 0; }
     .hero-content { text-align: center; z-index: 11; max-width: 900px; padding: 0 40px; }
     .hero-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 8px; color: #c9a84c !important; text-transform: uppercase; margin-bottom: 30px; opacity: 0; animation: fadeUp 0.6s ease 0s forwards; }
-    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(42px, 7vw, 90px); font-weight: 900; line-height: 1.05; color: #f0f0f0 !important; margin-bottom: 10px; opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(42px, 7vw, 90px); font-weight: 900; line-height: 1.05; color: #f0f0f0 !important; margin-bottom: 30px; opacity: 0; animation: fadeUp 0.6s ease 0.1s forwards; }
     .hero-title em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
     .hero-subtitle { font-size: 18px; color: #888 !important; max-width: 550px; margin: 0 auto 50px; line-height: 1.7; font-weight: 300; opacity: 0; animation: fadeUp 0.6s ease 0.2s forwards; }
     .hero-cta-group { display: flex; gap: 20px; justify-content: center; opacity: 0; animation: fadeUp 0.6s ease 0.3s forwards; }
@@ -354,7 +353,6 @@
     <div class="hero-content">
       <div class="hero-eyebrow">Bahrain's Premier Web Studio</div>
       <h1 class="hero-title">Websites<br><em>Directed,</em> Not<br>Just Designed</h1>
-      <img src="logo.png" alt="Cinematic Web Works Logo" class="hero-logo">
       <p class="hero-subtitle">We bring the eye of a filmmaker and the precision of an engineer to every website we build. No templates. No shortcuts. Just cinema-grade digital craft.</p>
       <div class="hero-cta-group">
         <a href="#work" class="btn-primary">View Our Work</a>

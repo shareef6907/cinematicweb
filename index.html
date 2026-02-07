@@ -234,7 +234,8 @@
     .project:hover .project-mockup { transform: translate(-50%, -50%) scale(1.02); }
     .mockup-bar { width: 100%; height: 8px; display: flex; gap: 4px; }
     .mockup-dot { width: 8px; height: 8px; border-radius: 50%; background: #1a1a1a; }
-    .mockup-content { flex: 1; width: 100%; background: #1a1a1a; border-radius: 3px; }
+    .mockup-content { flex: 1; width: 100%; background: #1a1a1a; border-radius: 3px; overflow: hidden; }
+    .mockup-content img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
     .project:nth-child(1) .mockup-content { background: linear-gradient(180deg, #1a1028 0%, #0f0d17 100%); }
     .project:nth-child(2) .mockup-content { background: linear-gradient(180deg, #0f1a14 0%, #0d110f 100%); }
     .project-info { padding: 50px 45px; display: flex; flex-direction: column; justify-content: center; }
@@ -389,7 +390,7 @@
           <div class="project-visual-gradient"></div>
           <div class="project-mockup">
             <div class="mockup-bar"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-            <div class="mockup-content"></div>
+            <div class="mockup-content"><img src="bahrainnights.png" alt="BahrainNights.com screenshot"></div>
           </div>
           <div class="project-visual-label">Featured Project</div>
         </div>
@@ -413,7 +414,7 @@
           <div class="project-visual-gradient"></div>
           <div class="project-mockup">
             <div class="mockup-bar"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-            <div class="mockup-content"></div>
+            <div class="mockup-content"><img src="filmproductionbahrain.png" alt="Film Production Bahrain screenshot"></div>
           </div>
           <div class="project-visual-label">Client Project</div>
         </div>

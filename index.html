@@ -170,8 +170,7 @@
     nav { position: fixed; top: 0; left: 0; width: 100%; padding: 28px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s ease; }
     nav.scrolled { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(20px); padding: 18px 50px; }
     .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: #f0f0f0 !important; text-decoration: none; display: flex; align-items: center; gap: 12px; }
-    .nav-logo { position: relative; }
-    .nav-logo .logo-img { height: 630px; width: auto; position: absolute; top: 50%; left: 0; transform: translateY(-50%); }
+    .hero-logo { height: 630px; width: auto; margin-bottom: 30px; }
     .nav-logo .logo-mark { width: 32px; height: 32px; border: 1.5px solid #c9a84c; display: flex; align-items: center; justify-content: center; }
     .nav-logo .logo-mark::after { content: ''; width: 0; height: 0; border-left: 8px solid #c9a84c; border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
     .nav-links { display: flex; gap: 40px; list-style: none; }
@@ -340,7 +339,7 @@
   <div class="cursor-ring" id="cursorRing"></div>
 
   <nav id="nav">
-    <a href="#" class="nav-logo"><img src="logo.png" alt="Cinematic Web Works" class="logo-img">Cinematic Web Works</a>
+    <a href="#" class="nav-logo">Cinematic Web Works</a>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#process">Process</a></li>
@@ -353,6 +352,7 @@
   <section class="hero" id="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
+      <img src="logo.png" alt="Cinematic Web Works Logo" class="hero-logo">
       <div class="hero-eyebrow">Bahrain's Premier Web Studio</div>
       <h1 class="hero-title">Websites<br><em>Directed,</em> Not<br>Just Designed</h1>
       <p class="hero-subtitle">We bring the eye of a filmmaker and the precision of an engineer to every website we build. No templates. No shortcuts. Just cinema-grade digital craft.</p>

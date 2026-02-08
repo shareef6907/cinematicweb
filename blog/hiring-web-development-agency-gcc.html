@@ -121,6 +121,9 @@
       .checklist-item { flex-direction: column; gap: 10px; }
       .checklist-number { min-width: auto; }
     }
+  
+    @media (max-width: 768px) { .cinematic-group-bar { padding: 15px 0 !important; } .cinematic-group-links { flex-direction: column !important; gap: 15px !important; } }
+
   </style>
 </head>
 <body>
@@ -295,6 +298,20 @@
     </div>
   </section>
 
+
+  <!-- Cinematic Group Bar -->
+  <div class="cinematic-group-bar" style="background: #111; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 20px 0; text-align: center;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 4px; color: #c9a84c; margin-bottom: 15px;">PART OF THE CINEMATIC GROUP</div>
+      <div class="cinematic-group-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; font-size: 13px;">
+        <a href="https://cinematicwebworks.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">🌐 Web Development</a>
+        <a href="https://filmproductionbahrain.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">🎬 Film Production</a>
+        <a href="https://eventsbahrain.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">🎪 Events & Equipment</a>
+        <a href="https://studentphotos.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">📸 School Photography</a>
+        <a href="https://bahrainnights.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">🌙 What's On in Bahrain</a>
+      </div>
+    </div>
+  </div>
   <footer>
     <div class="footer-logo">Cinematic Web Works</div>
     <div class="footer-copy">&copy; 2026 Cinematic Web Works. Crafted in Bahrain.</div>

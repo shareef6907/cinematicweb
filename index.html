@@ -705,5 +705,24 @@
     }, { threshold: 0.1 });
     reveals.forEach(function(el) { observer.observe(el); });
   </script>
+<script>
+function sendEmail(form) {
+  var name = form.name.value;
+  var email = form.email.value;
+  var phone = form.phone.value || "Not provided";
+  var service = form.service.value;
+  var budget = form.budget.value || "Not specified";
+  var message = form.message.value;
+  var subject = "Website Inquiry: " + service + " from " + name;
+  var body = "Name: " + name + "\n";
+  body += "Email: " + email + "\n";
+  body += "Phone: " + phone + "\n";
+  body += "Service: " + service + "\n";
+  body += "Budget: " + budget + "\n\n";
+  body += "Message:\n" + message;
+  window.location.href = "mailto:ceo@bahrainnights.com?subject=" + encodeURIComponent(subject) + "\&body=" + encodeURIComponent(body);
+  return false;
+}
+</script>
 </body>
 </html>

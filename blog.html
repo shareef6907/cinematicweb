@@ -515,11 +515,11 @@
     </div>
     <div class="cards-container" id="featuredRow"></div>
     
-    <!-- Pricing Row -->
+    <!-- Trends Row -->
     <div class="row-header">
-      <h2 class="row-title">💰 Pricing & Budgets</h2>
+      <h2 class="row-title">🎨 Design & Trends</h2>
     </div>
-    <div class="cards-container" id="pricingRow"></div>
+    <div class="cards-container" id="trendsRow"></div>
     
     <!-- Guides Row -->
     <div class="row-header">
@@ -578,11 +578,11 @@
     const blogPosts = [
       {
         slug: "web-development-cost-bahrain-2026",
-        title: "How Much Does Web Development Cost in Bahrain? (2026 Guide)",
-        excerpt: "A comprehensive breakdown of website development costs in Bahrain.",
+        title: "Web Design Trends in Bahrain 2026: What's Working Now",
+        excerpt: "Discover the design trends dominating Bahrain's digital landscape this year.",
         date: "February 2026",
         readTime: "8 min",
-        category: "pricing",
+        category: "technology",
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop"
       },
       {
@@ -597,7 +597,7 @@
       {
         slug: "bahrain-web-agencies-uae-businesses",
         title: "Why Bahrain-Based Web Agencies Are the Smart Choice for UAE Businesses",
-        excerpt: "Discover how UAE companies are saving 30-50% by partnering with Bahrain agencies.",
+        excerpt: "Discover why UAE companies are partnering with Bahrain agencies for digital excellence.",
         date: "February 2026",
         readTime: "7 min",
         category: "business",
@@ -690,7 +690,7 @@
 
     function renderBlogRows() {
       const featured = document.getElementById('featuredRow');
-      const pricing = document.getElementById('pricingRow');
+      const trends = document.getElementById('trendsRow');
       const guides = document.getElementById('guidesRow');
       const business = document.getElementById('businessRow');
 
@@ -698,7 +698,7 @@
       featured.innerHTML = blogPosts.map(renderCard).join('');
       
       // Render by category
-      pricing.innerHTML = blogPosts.filter(p => p.category === 'pricing').map(renderCard).join('');
+      trends.innerHTML = blogPosts.filter(p => p.category === 'technology').map(renderCard).join('');
       guides.innerHTML = blogPosts.filter(p => p.category === 'guide').map(renderCard).join('');
       business.innerHTML = blogPosts.filter(p => p.category === 'business').map(renderCard).join('');
     }

@@ -369,6 +369,7 @@
       <li><a href="#work">Portfolio</a></li>
       <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#group">Our Group</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="nav-cta">Start a Project</a>
@@ -594,7 +595,7 @@
     <div class="contact-channels reveal">
       <p class="contact-desc">Tell us about your vision. We'll get back to you within 24 hours.</p>
       
-      <form class="contact-form" action="#" method="POST">
+      <form class="contact-form" onsubmit="return sendEmail(this);">
         <div class="form-row">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="email" name="email" placeholder="Email Address" required>

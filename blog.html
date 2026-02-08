@@ -7,628 +7,267 @@
   <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" type="image/png" href="favicon.png">
   
+  <!-- Primary SEO Meta Tags -->
   <title>Web Development Blog | Cinematic Web Works</title>
-  <meta name="description" content="Expert insights on web development, SEO, and digital strategy for businesses in Bahrain, Dubai, Saudi Arabia, and the GCC region.">
+  <meta name="description" content="Expert insights on web development, SEO, and digital strategy for businesses in Bahrain, Dubai, Saudi Arabia, and the GCC region. Tips from a filmmaker-turned-developer.">
+  <meta name="keywords" content="web development blog, web design tips bahrain, digital marketing gcc, website advice dubai, web agency insights">
+  <meta name="author" content="Cinematic Web Works">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://cinematicwebworks.com/blog.html">
   
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://cinematicwebworks.com/blog.html">
   <meta property="og:title" content="Web Development Blog | Cinematic Web Works">
-  <meta property="og:description" content="Expert insights on web development for GCC businesses.">
+  <meta property="og:description" content="Expert insights on web development for GCC businesses from a filmmaker-turned-developer.">
+  <meta property="og:image" content="https://cinematicwebworks.com/og-image.png">
+  <meta property="og:site_name" content="Cinematic Web Works">
   
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0a0a0a;
-      color: #fff;
-      min-height: 100vh;
-      overflow-x: hidden;
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Web Development Blog | Cinematic Web Works">
+  <meta name="twitter:description" content="Expert insights on web development for GCC businesses.">
+  <meta name="twitter:image" content="https://cinematicwebworks.com/og-image.png">
+  
+  <!-- Blog Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Cinematic Web Works Blog",
+    "description": "Expert insights on web development, SEO, and digital strategy for businesses in the GCC region.",
+    "url": "https://cinematicwebworks.com/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cinematic Web Works",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cinematicwebworks.com/logo.png"
+      }
     }
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: #0a0a0a !important; color-scheme: dark; }
+    body { font-family: 'DM Sans', sans-serif; background: #0a0a0a !important; color: #c8c8c8 !important; overflow-x: hidden; -webkit-font-smoothing: antialiased; min-height: 100vh; line-height: 1.7; }
+    a { color: #c9a84c; text-decoration: none; }
+    a:hover { color: #d4b35a; }
     
     /* Navigation */
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-    }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 28px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(20px); }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: #f0f0f0 !important; text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    .nav-logo .logo-mark { width: 32px; height: 32px; border: 1.5px solid #c9a84c; display: flex; align-items: center; justify-content: center; }
+    .nav-logo .logo-mark::after { content: ''; width: 0; height: 0; border-left: 8px solid #c9a84c; border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { color: #888 !important; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s ease; }
+    .nav-links a:hover { color: #f0f0f0 !important; }
+    .nav-links a.active { color: #c9a84c !important; }
+    .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #c9a84c !important; text-decoration: none; border: 1px solid #c9a84c; padding: 10px 28px; transition: all 0.3s ease; }
+    .nav-cta:hover { background: #c9a84c; color: #0a0a0a !important; }
     
-    .nav-logo {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: #fff;
-      text-decoration: none;
-    }
+    /* Hero */
+    .blog-hero { padding: 160px 50px 80px; max-width: 1200px; margin: 0 auto; text-align: center; }
+    .blog-hero-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 8px; color: #c9a84c !important; text-transform: uppercase; margin-bottom: 20px; }
+    .blog-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(42px, 6vw, 72px); font-weight: 900; line-height: 1.1; color: #f0f0f0 !important; margin-bottom: 25px; }
+    .blog-hero-title em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
+    .blog-hero-subtitle { font-size: 18px; color: #888 !important; max-width: 600px; margin: 0 auto; line-height: 1.7; }
     
-    .nav-logo span {
-      background: linear-gradient(to right, #f59e0b, #ea580c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    /* Blog Grid */
+    .blog-section { padding: 40px 50px 120px; max-width: 1200px; margin: 0 auto; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
     
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
+    /* Blog Card */
+    .blog-card { background: #111 !important; border: 1px solid #1a1a1a; padding: 40px; transition: all 0.4s ease; display: flex; flex-direction: column; }
+    .blog-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-5px); }
+    .blog-card-category { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 4px; color: #c9a84c !important; text-transform: uppercase; margin-bottom: 15px; }
+    .blog-card-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #f0f0f0 !important; line-height: 1.3; margin-bottom: 15px; }
+    .blog-card-title a { color: #f0f0f0 !important; text-decoration: none; transition: color 0.3s ease; }
+    .blog-card-title a:hover { color: #c9a84c !important; }
+    .blog-card-excerpt { color: #888 !important; font-size: 15px; line-height: 1.7; margin-bottom: 25px; flex-grow: 1; }
+    .blog-card-meta { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid #1a1a1a; }
+    .blog-card-date { font-size: 13px; color: #666 !important; }
+    .blog-card-link { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 2px; color: #c9a84c !important; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.3s ease; }
+    .blog-card-link:hover { gap: 12px; }
+    .blog-card-link svg { width: 16px; height: 16px; }
     
-    .nav-links a {
-      color: #9ca3af;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
+    /* Featured Post */
+    .featured-post { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #111 !important; border: 1px solid #1a1a1a; margin-bottom: 20px; }
+    .featured-post:hover { border-color: rgba(201,168,76,0.3); }
+    .featured-visual { background: linear-gradient(135deg, #1a1520 0%, #0d1117 50%, #111518 100%); padding: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+    .featured-badge { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 4px; color: #c9a84c !important; text-transform: uppercase; background: rgba(10,10,10,0.7); padding: 8px 16px; margin-bottom: 20px; }
+    .featured-icon { font-size: 48px; margin-bottom: 15px; }
+    .featured-content { padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+    .featured-content .blog-card-category { margin-bottom: 20px; }
+    .featured-content .blog-card-title { font-size: 32px; margin-bottom: 20px; }
+    .featured-content .blog-card-excerpt { font-size: 16px; margin-bottom: 30px; }
     
-    .nav-links a:hover { color: #fff; }
-    
-    /* Hero Trailer Section */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 85vh;
-      overflow: hidden;
-      background: #000;
-    }
-    
-    .trailer-container {
-      position: absolute;
-      inset: 0;
-    }
-    
-    .hero-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      opacity: 0.7;
-    }
-    
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.5), transparent);
-    }
-    
-    .hero-overlay-bottom {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, #0a0a0a, transparent 40%, transparent);
-    }
-    
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      padding: 0 4rem;
-      max-width: 600px;
-      z-index: 10;
-    }
-    
-    .hero-badge {
-      display: inline-block;
-      background: #f59e0b;
-      color: #000;
-      padding: 0.5rem 1rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-radius: 4px;
-      margin-bottom: 1rem;
-    }
-    
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 900;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
-    }
-    
-    .hero-description {
-      font-size: 1.25rem;
-      color: #d1d5db;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 10px rgba(0,0,0,0.8);
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 2rem;
-      font-size: 1rem;
-      font-weight: 700;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    
-    .btn-primary {
-      background: linear-gradient(to right, #f59e0b, #ea580c);
-      color: #000;
-    }
-    
-    .btn-primary:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
-    }
-    
-    .btn-secondary {
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-      backdrop-filter: blur(10px);
-    }
-    
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.3);
-    }
-    
-    /* Trailer Navigation */
-    .trailer-nav {
-      position: absolute;
-      bottom: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 0.5rem;
-      z-index: 20;
-    }
-    
-    .trailer-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .trailer-dot.active {
-      width: 40px;
-      border-radius: 4px;
-      background: #f59e0b;
-    }
-    
-    .trailer-arrows {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 20;
-    }
-    
-    .trailer-arrows.left { left: 1rem; }
-    .trailer-arrows.right { right: 1rem; }
-    
-    .arrow-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.6);
-      border: none;
-      color: #fff;
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    
-    .arrow-btn:hover {
-      background: rgba(0,0,0,0.9);
-    }
-    
-    /* Stats Bar */
-    .stats-bar {
-      position: relative;
-      z-index: 30;
-      margin-top: -4rem;
-      padding: 0 2rem;
-    }
-    
-    .stats-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      background: linear-gradient(to right, rgba(245,158,11,0.15), rgba(234,88,12,0.15));
-      border: 1px solid rgba(245,158,11,0.3);
-      border-radius: 1rem;
-      padding: 1.5rem 2rem;
-      backdrop-filter: blur(10px);
-    }
-    
-    .stats-grid {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-    
-    .stat-item h3 {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #f59e0b;
-    }
-    
-    .stat-item p {
-      font-size: 0.875rem;
-      color: #9ca3af;
-    }
-    
-    /* Content Rows */
-    .content-section {
-      padding: 2rem 0;
-    }
-    
-    .row-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-      margin-bottom: 1rem;
-    }
-    
-    .row-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .row-see-all {
-      color: #9ca3af;
-      text-decoration: none;
-      font-size: 0.875rem;
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-    }
-    
-    .row-see-all:hover { color: #f59e0b; }
-    
-    /* Cards Container */
-    .cards-container {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      padding: 0 2rem 1rem;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    
-    .cards-container::-webkit-scrollbar { display: none; }
-    
-    /* Card */
-    .card {
-      flex-shrink: 0;
-      width: 320px;
-      aspect-ratio: 16/10;
-      border-radius: 8px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      scroll-snap-align: start;
-      transition: transform 0.3s, z-index 0s;
-    }
-    
-    .card:hover {
-      transform: scale(1.05);
-      z-index: 10;
-    }
-    
-    .card-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-    
-    .card:hover .card-image {
-      transform: scale(1.1);
-    }
-    
-    .card-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3), transparent);
-    }
-    
-    .card-category {
-      position: absolute;
-      top: 0.75rem;
-      left: 0.75rem;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #fff;
-      border-radius: 4px;
-    }
-    
-    .card-category.pricing { background: linear-gradient(to right, #10b981, #059669); }
-    .card-category.guide { background: linear-gradient(to right, #3b82f6, #0891b2); }
-    .card-category.business { background: linear-gradient(to right, #8b5cf6, #7c3aed); }
-    .card-category.technology { background: linear-gradient(to right, #f59e0b, #ea580c); }
-    
-    .card-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1rem;
-    }
-    
-    .card-title {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      transition: color 0.2s;
-    }
-    
-    .card:hover .card-title { color: #fbbf24; }
-    
-    .card-meta {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.75rem;
-      color: #9ca3af;
-    }
-    
-    /* CTA Section */
-    .cta-section {
-      padding: 4rem 2rem;
-    }
-    
-    .cta-inner {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      background: linear-gradient(to right, rgba(245,158,11,0.15), rgba(234,88,12,0.15));
-      border: 1px solid rgba(245,158,11,0.3);
-      border-radius: 1.5rem;
-      padding: 3rem;
-    }
-    
-    .cta-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    
-    .cta-text {
-      color: #9ca3af;
-      margin-bottom: 2rem;
-    }
+    /* Newsletter */
+    .newsletter { padding: 80px 50px; max-width: 800px; margin: 0 auto; text-align: center; }
+    .newsletter-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: #f0f0f0 !important; margin-bottom: 15px; }
+    .newsletter-desc { color: #888 !important; margin-bottom: 30px; }
+    .newsletter-form { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .newsletter-input { padding: 16px 24px; background: #111; border: 1px solid #2a2a2a; color: #f0f0f0; font-size: 15px; min-width: 300px; outline: none; transition: border-color 0.3s ease; }
+    .newsletter-input:focus { border-color: #c9a84c; }
+    .newsletter-input::placeholder { color: #666; }
+    .btn-primary { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; padding: 16px 45px; background: #c9a84c !important; color: #0a0a0a !important; border: none; cursor: pointer; transition: all 0.3s ease; }
+    .btn-primary:hover { background: #d4b35a !important; transform: translateY(-2px); }
     
     /* Footer */
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      color: #6b7280;
-      font-size: 0.875rem;
+    footer { padding: 60px 50px; border-top: 1px solid rgba(255,255,255,0.04); background: #0a0a0a !important; }
+    .footer-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 4px; color: #888 !important; }
+    .footer-links { display: flex; gap: 30px; list-style: none; }
+    .footer-links a { color: #888 !important; text-decoration: none; font-size: 13px; transition: color 0.3s ease; }
+    .footer-links a:hover { color: #c9a84c !important; }
+    .footer-copy { font-size: 12px; color: #2a2a2a !important; }
+    
+    @media (max-width: 1024px) {
+      .featured-post { grid-template-columns: 1fr; }
+      .featured-visual { padding: 40px; }
+      .featured-content { padding: 40px; }
     }
     
-    /* Mobile */
-    @media (max-width: 768px) {
+    @media (max-width: 768px) { 
+      nav { padding: 20px 25px; } 
       .nav-links { display: none; }
-      .hero-content { padding: 0 1.5rem; }
-      .hero-title { font-size: 2rem; }
-      .hero-description { font-size: 1rem; }
-      .stats-grid { gap: 1.5rem; }
-      .card { width: 260px; }
+      .blog-hero { padding: 120px 25px 60px; }
+      .blog-section { padding: 20px 25px 80px; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card { padding: 30px; }
+      .featured-content .blog-card-title { font-size: 26px; }
+      .newsletter { padding: 60px 25px; }
+      .newsletter-form { flex-direction: column; align-items: center; }
+      .newsletter-input { min-width: 100%; max-width: 100%; }
+      footer { padding: 40px 25px; }
+      .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
     }
-  
-    @media (max-width: 768px) { .cinematic-group-bar { padding: 15px 0 !important; } .cinematic-group-links { flex-direction: column !important; gap: 15px !important; } }
-
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="nav">
-    <a href="index.html" class="nav-logo"><span>Cinematic</span> Web Works</a>
+  <nav>
+    <a href="index.html" class="nav-logo"><div class="logo-mark"></div>Cinematic Web Works</a>
     <ul class="nav-links">
       <li><a href="solutions.html">Solutions</a></li>
-      <li><a href="platforms.html">Platforms</a></li>
-      <li><a href="industries.html">Industries</a></li>
-      <li><a href="technology.html">Technology</a></li>
       <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      <li><a href="blog.html" style="color:#f59e0b">Blog</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
     </ul>
+    <a href="index.html#contact" class="nav-cta">Start a Project</a>
   </nav>
 
-  <!-- Hero Video Section -->
-  <section class="hero" id="hero">
-    <div class="trailer-container">
-      <video class="hero-video" src="showreel.mp4" autoplay playsinline muted loop></video>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="hero-overlay-bottom"></div>
-    
-    <div class="hero-content">
-      <span class="hero-badge">Insights & Ideas</span>
-      <h1 class="hero-title">Web Development Blog</h1>
-      <p class="hero-description">Expert insights on web development, design trends, and digital strategy for businesses in the GCC region.</p>
-      <div class="hero-buttons">
-        <a href="#articles" class="btn btn-primary">Explore Articles</a>
-      </div>
-    </div>
-  </section>
+  <header class="blog-hero">
+    <div class="blog-hero-eyebrow">Insights & Expertise</div>
+    <h1 class="blog-hero-title">The Cinematic <em>Web Blog</em></h1>
+    <p class="blog-hero-subtitle">Expert insights on web development, video production, and digital strategy for businesses across the GCC and beyond.</p>
+  </header>
 
-  <!-- Stats Bar -->
-  <div class="stats-bar">
-    <div class="stats-inner">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <h3>25+</h3>
-          <p>Platforms Built</p>
-        </div>
-        <div class="stat-item">
-          <h3>500+</h3>
-          <p>Pages Deployed</p>
-        </div>
-        <div class="stat-item">
-          <h3>15+</h3>
-          <p>Years Experience</p>
-        </div>
-        <div class="stat-item">
-          <h3>0</h3>
-          <p>Templates Used</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Content Rows -->
-  <section class="content-section" id="articles">
-    <!-- Featured Row -->
-    <div class="row-header">
-      <h2 class="row-title">⭐ Featured Articles</h2>
-    </div>
-    <div class="cards-container" id="featuredRow"></div>
-    
-    <!-- Trends Row -->
-    <div class="row-header">
-      <h2 class="row-title">🎨 Design & Trends</h2>
-    </div>
-    <div class="cards-container" id="trendsRow"></div>
-    
-    <!-- Guides Row -->
-    <div class="row-header">
-      <h2 class="row-title">📚 Guides & How-To</h2>
-    </div>
-    <div class="cards-container" id="guidesRow"></div>
-    
-    <!-- Business Row -->
-    <div class="row-header">
-      <h2 class="row-title">📈 Business Strategy</h2>
-    </div>
-    <div class="cards-container" id="businessRow"></div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta-section">
-    <div class="cta-inner">
-      <h2 class="cta-title">Ready to Build Something Epic?</h2>
-      <p class="cta-text">Get a free consultation and quote for your web development project.</p>
-      <a href="index.html#contact" class="btn btn-primary">Start Your Project</a>
-    </div>
-  </section>
-
-  <!-- Cinematic Group Bar -->
-  <div class="cinematic-group-bar" style="background: #111; border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 20px 0; text-align: center;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-      <div style="font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 4px; color: #c9a84c; margin-bottom: 15px;">PART OF THE CINEMATIC GROUP</div>
-      <div class="cinematic-group-links" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; font-size: 13px;">
-        <a href="https://cinematicwebworks.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">🌐 Web Development</a>
-        <a href="https://filmproductionbahrain.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">🎬 Film Production</a>
-        <a href="https://eventsbahrain.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">🎪 Events & Equipment</a>
-        <a href="https://studentphotos.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">📸 School Photography</a>
-        <a href="https://bahrainnights.com" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a84c'" onmouseout="this.style.color='#888'">🌙 What's On in Bahrain</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2026 Cinematic Web Works. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Blog posts data
-    const blogPosts = [
-      {
-        slug: "web-development-cost-bahrain-2026",
-        title: "Web Design Trends in Bahrain 2026: What's Working Now",
-        excerpt: "Discover the design trends dominating Bahrain's digital landscape this year.",
-        date: "February 2026",
-        readTime: "8 min",
-        category: "technology",
-        image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=450&fit=crop"
-      },
-      {
-        slug: "hiring-web-development-agency-gcc",
-        title: "Top 10 Things to Look for When Hiring a Web Development Agency in the GCC",
-        excerpt: "Essential criteria for choosing the right web development partner.",
-        date: "February 2026",
-        readTime: "10 min",
-        category: "guide",
-        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=450&fit=crop"
-      },
-      {
-        slug: "bahrain-web-agencies-uae-businesses",
-        title: "Why Bahrain-Based Web Agencies Are the Smart Choice for UAE Businesses",
-        excerpt: "Discover why UAE companies are partnering with Bahrain agencies for digital excellence.",
-        date: "February 2026",
-        readTime: "7 min",
-        category: "business",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=450&fit=crop"
-      }
-    ];
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', () => {
-      renderBlogRows();
-    });
-
-    function renderBlogRows() {
-      const featured = document.getElementById('featuredRow');
-      const trends = document.getElementById('trendsRow');
-      const guides = document.getElementById('guidesRow');
-      const business = document.getElementById('businessRow');
-
-      // Render all in featured
-      featured.innerHTML = blogPosts.map(renderCard).join('');
+  <section class="blog-section">
+    <div class="blog-grid">
       
-      // Render by category
-      trends.innerHTML = blogPosts.filter(p => p.category === 'technology').map(renderCard).join('');
-      guides.innerHTML = blogPosts.filter(p => p.category === 'guide').map(renderCard).join('');
-      business.innerHTML = blogPosts.filter(p => p.category === 'business').map(renderCard).join('');
-    }
-
-    function renderCard(post) {
-      return `
-        <a href="blog/${post.slug}.html" class="card">
-          <img src="${post.image}" alt="${post.title}" class="card-image">
-          <div class="card-overlay"></div>
-          <span class="card-category ${post.category}">${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
-          <div class="card-content">
-            <h3 class="card-title">${post.title}</h3>
-            <div class="card-meta">
-              <span>⏱ ${post.readTime}</span>
-              <span>${post.date}</span>
-            </div>
+      <!-- Featured Post -->
+      <article class="featured-post">
+        <div class="featured-visual">
+          <div class="featured-badge">Featured Article</div>
+          <div class="featured-icon">🎬</div>
+          <span style="font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #888;">Latest Insights</span>
+        </div>
+        <div class="featured-content">
+          <div class="blog-card-category">🎥 Video & Web Design</div>
+          <h2 class="blog-card-title"><a href="blog/why-website-needs-cinematic-header-video.html">Why Your Website Needs a Cinematic Header Video in 2026</a></h2>
+          <p class="blog-card-excerpt">Discover how cinematic website header videos increase conversions by 80%. Learn the difference between stock video and custom-shot content, and how video impacts your bounce rate and time on site.</p>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">February 8, 2026</span>
+            <a href="blog/why-website-needs-cinematic-header-video.html" class="blog-card-link">
+              Read Article
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+            </a>
           </div>
-        </a>
-      `;
-    }
-  </script>
+        </div>
+      </article>
+      
+      <!-- Post 2 -->
+      <article class="blog-card">
+        <div class="blog-card-category">💰 Pricing Guide</div>
+        <h2 class="blog-card-title"><a href="blog/web-development-cost-bahrain-2026.html">How Much Does Web Development Cost in Bahrain? Complete 2026 Guide</a></h2>
+        <p class="blog-card-excerpt">Complete 2026 guide to web development costs in Bahrain. From basic websites (BD 300-800) to cinematic sites with video (BD 2,000-5,000+). Learn what affects pricing and how to budget.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">February 8, 2026</span>
+          <a href="blog/web-development-cost-bahrain-2026.html" class="blog-card-link">
+            Read Article
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </article>
+      
+      <!-- Post 3 -->
+      <article class="blog-card">
+        <div class="blog-card-category">🎬 Design Philosophy</div>
+        <h2 class="blog-card-title"><a href="blog/filmmaker-approach-to-web-design.html">The Filmmaker's Approach to Web Design: Why It Produces Better Websites</a></h2>
+        <p class="blog-card-excerpt">Discover how film principles like composition, pacing, and visual hierarchy create better websites. Learn why Bahrain's best web design agency thinks like filmmakers, not just developers.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">February 8, 2026</span>
+          <a href="blog/filmmaker-approach-to-web-design.html" class="blog-card-link">
+            Read Article
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </article>
+      
+      <!-- Post 4 -->
+      <article class="blog-card">
+        <div class="blog-card-category">📋 Business Guide</div>
+        <h2 class="blog-card-title"><a href="blog/hiring-web-agency-gcc-guide.html">Top 10 Things to Look for When Hiring a Web Agency in the GCC</a></h2>
+        <p class="blog-card-excerpt">Complete guide to hiring a web development agency in the GCC. Learn what to look for in agencies across Bahrain, Dubai, Saudi Arabia, Qatar, Kuwait, and Oman before signing any contract.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">February 8, 2026</span>
+          <a href="blog/hiring-web-agency-gcc-guide.html" class="blog-card-link">
+            Read Article
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </article>
+      
+      <!-- Post 5 -->
+      <article class="blog-card">
+        <div class="blog-card-category">💡 Smart Business</div>
+        <h2 class="blog-card-title"><a href="blog/bahrain-vs-dubai-web-development.html">Bahrain vs Dubai: Why Smart UAE Businesses Choose Bahrain Web Agencies</a></h2>
+        <p class="blog-card-excerpt">Discover why UAE businesses save 40-60% on web development by choosing Bahrain agencies. Same timezone, same quality, better value. Complete comparison guide with case studies.</p>
+        <div class="blog-card-meta">
+          <span class="blog-card-date">February 8, 2026</span>
+          <a href="blog/bahrain-vs-dubai-web-development.html" class="blog-card-link">
+            Read Article
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+        </div>
+      </article>
+      
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2 class="newsletter-title">Stay <em>Updated</em></h2>
+    <p class="newsletter-desc">Get notified when we publish new insights on web development, SEO, and digital strategy.</p>
+    <form class="newsletter-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" class="newsletter-input" placeholder="Enter your email" required>
+      <button type="submit" class="btn-primary">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Cinematic Web Works</div>
+      <ul class="footer-links">
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2026 Cinematic Web Works. Crafted in Bahrain.</div>
+    </div>
+  </footer>
 </body>
 </html>

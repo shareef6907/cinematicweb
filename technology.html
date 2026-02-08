@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0a0a0a !important;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Technology Stack — Cinematic Web Works</title>
+  <meta name="description" content="Our technology stack: React, Next.js, TypeScript, Node.js, Python, AWS, OpenAI, Claude AI, and more. Enterprise-grade tools for enterprise-grade solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #2a2a2a #0a0a0a; background: #0a0a0a !important; color-scheme: dark; }
+    body { font-family: 'DM Sans', sans-serif; background: #0a0a0a !important; color: #c8c8c8 !important; overflow-x: hidden; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+    body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 28px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s ease; }
+    nav.scrolled { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(20px); padding: 18px 50px; }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: #f0f0f0 !important; text-decoration: none; display: flex; align-items: center; gap: 12px; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { color: #888 !important; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 400; transition: color 0.3s ease; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: #c9a84c; transition: width 0.3s ease; }
+    .nav-links a:hover { color: #f0f0f0 !important; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #c9a84c !important; text-decoration: none; border: 1px solid #c9a84c; padding: 10px 28px; transition: all 0.3s ease; }
+    .nav-cta:hover { background: #c9a84c; color: #0a0a0a !important; }
+    .hero { height: 60vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #0a0a0a !important; }
+    .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(139,32,32,0.04) 0%, transparent 50%), linear-gradient(180deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%); }
+    .hero-content { text-align: center; z-index: 11; max-width: 900px; padding: 0 40px; padding-top: 80px; }
+    .hero-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 8px; color: #c9a84c !important; text-transform: uppercase; margin-bottom: 30px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(42px, 7vw, 90px); font-weight: 900; line-height: 1.05; color: #f0f0f0 !important; margin-bottom: 30px; }
+    .hero-title em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
+    .hero-subtitle { font-size: 18px; color: #888 !important; max-width: 550px; margin: 0 auto; line-height: 1.7; font-weight: 300; }
+    .portfolio { padding: 60px 50px 120px; max-width: 1400px; margin: 0 auto; background: #0a0a0a !important; }
+    .section-header { margin-bottom: 40px; }
+    .section-number { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 5px; color: #c9a84c !important; display: block; margin-bottom: 15px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 900; color: #f0f0f0 !important; line-height: 1.1; }
+    .section-title em { font-weight: 400; font-style: italic; color: #c9a84c !important; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 80px; }
+    .process-step { padding: 40px 30px; transition: all 0.4s ease; background: #111 !important; }
+    .process-step:hover { background: #1a1a1a !important; }
+    .step-icon { width: 50px; height: 50px; border: 1px solid #2a2a2a; display: flex; align-items: center; justify-content: center; margin-bottom: 25px; font-size: 24px; }
+    .step-title { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 3px; color: #f0f0f0 !important; margin-bottom: 12px; }
+    .step-desc { color: #888 !important; font-size: 13px; line-height: 1.7; font-weight: 300; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .tech-tag { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #c9a84c !important; padding: 4px 10px; border: 1px solid rgba(201,168,76,0.3); }
+    .exclusive { padding: 150px 50px; text-align: center; position: relative; overflow: hidden; background: #0a0a0a !important; }
+    .exclusive-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 60%); }
+    .exclusive-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .exclusive-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 6px; color: #c9a84c !important; margin-bottom: 30px; }
+    .exclusive-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 900; color: #f0f0f0 !important; line-height: 1.15; margin-bottom: 25px; }
+    .exclusive-title em { font-style: italic; font-weight: 400; color: #c9a84c !important; }
+    .exclusive-desc { color: #888 !important; font-size: 17px; line-height: 1.7; font-weight: 300; margin-bottom: 40px; }
+    .btn-primary { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; padding: 16px 45px; background: #c9a84c !important; color: #0a0a0a !important; text-decoration: none; transition: all 0.3s ease; display: inline-block; }
+    .btn-primary:hover { background: #d4b35a !important; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201,168,76,0.2); }
+    footer { padding: 60px 50px; border-top: 1px solid rgba(255,255,255,0.04); background: #111 !important; }
+    .footer-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 4px; color: #888 !important; }
+    .footer-links { display: flex; gap: 30px; list-style: none; }
+    .footer-links a { color: #888 !important; text-decoration: none; font-size: 13px; transition: color 0.3s ease; }
+    .footer-links a:hover { color: #c9a84c !important; }
+    .footer-right { text-align: right; }
+    .footer-copy { font-size: 12px; color: #2a2a2a !important; }
+    .footer-cr { font-size: 11px; color: #2a2a2a !important; margin-top: 4px; letter-spacing: 1px; }
+    .reveal { opacity: 1; transform: translateY(0); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .reveal.hidden-init { opacity: 0; transform: translateY(40px); }
+    .reveal.visible { opacity: 1 !important; transform: translateY(0) !important; }
+    @media (max-width: 1024px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 768px) { nav { padding: 20px 25px; } nav.scrolled { padding: 15px 25px; } .nav-links { display: none; } .hero-content { padding: 0 25px; padding-top: 80px; } .portfolio { padding: 40px 25px 80px; } .process-grid { grid-template-columns: 1fr; } .exclusive { padding: 100px 25px; } footer { padding: 40px 25px; } .footer-inner { flex-direction: column; gap: 20px; text-align: center; } .footer-right { text-align: center; } }
+  </style>
+</head>
+<body style="background:#0a0a0a !important; color:#c8c8c8 !important;">
+
+  <nav id="nav">
+    <a href="index.html" class="nav-logo">Cinematic Web Works</a>
+    <ul class="nav-links">
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="platforms.html">Platforms</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#contact" class="nav-cta">Start a Project</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Technology</div>
+      <h1 class="hero-title">Our <em>Stack</em></h1>
+      <p class="hero-subtitle">Enterprise-grade tools. No compromises. Every project gets the right technology for the job.</p>
+    </div>
+  </section>
+
+  <section class="portfolio">
+    <div class="section-header reveal">
+      <span class="section-number">Frontend</span>
+      <h2 class="section-title">User <em>Interface</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-icon">⚛️</div>
+        <div class="step-title">React</div>
+        <p class="step-desc">Component-based architecture for scalable, maintainable interfaces.</p>
+        <div class="tech-tags"><span class="tech-tag">Hooks</span><span class="tech-tag">Context</span><span class="tech-tag">Redux</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">▲</div>
+        <div class="step-title">Next.js</div>
+        <p class="step-desc">Server-side rendering, static generation, API routes. The React framework for production.</p>
+        <div class="tech-tags"><span class="tech-tag">App Router</span><span class="tech-tag">ISR</span><span class="tech-tag">Edge</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">📘</div>
+        <div class="step-title">TypeScript</div>
+        <p class="step-desc">Type safety for large codebases. Fewer bugs, better developer experience.</p>
+        <div class="tech-tags"><span class="tech-tag">Strict Mode</span><span class="tech-tag">Generics</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">🎨</div>
+        <div class="step-title">Tailwind CSS</div>
+        <p class="step-desc">Utility-first CSS for rapid, consistent styling. Custom design systems.</p>
+        <div class="tech-tags"><span class="tech-tag">JIT</span><span class="tech-tag">Plugins</span></div>
+      </div>
+    </div>
+
+    <div class="section-header reveal">
+      <span class="section-number">Backend</span>
+      <h2 class="section-title">Server <em>Infrastructure</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-icon">🟢</div>
+        <div class="step-title">Node.js</div>
+        <p class="step-desc">JavaScript runtime for scalable APIs. Express, Fastify, or serverless functions.</p>
+        <div class="tech-tags"><span class="tech-tag">Express</span><span class="tech-tag">Fastify</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">🐍</div>
+        <div class="step-title">Python</div>
+        <p class="step-desc">Data processing, ML pipelines, automation scripts. Django or FastAPI for web services.</p>
+        <div class="tech-tags"><span class="tech-tag">FastAPI</span><span class="tech-tag">Pandas</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">🐘</div>
+        <div class="step-title">PostgreSQL</div>
+        <p class="step-desc">Robust relational database. Full-text search, JSON support, rock-solid reliability.</p>
+        <div class="tech-tags"><span class="tech-tag">Supabase</span><span class="tech-tag">Prisma</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">🔥</div>
+        <div class="step-title">Redis</div>
+        <p class="step-desc">In-memory caching, session storage, real-time features, job queues.</p>
+        <div class="tech-tags"><span class="tech-tag">Caching</span><span class="tech-tag">Pub/Sub</span></div>
+      </div>
+    </div>
+
+    <div class="section-header reveal">
+      <span class="section-number">Cloud</span>
+      <h2 class="section-title">Deployment &amp; <em>Hosting</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-icon">☁️</div>
+        <div class="step-title">AWS</div>
+        <p class="step-desc">EC2, S3, Lambda, CloudFront. Enterprise-grade cloud infrastructure.</p>
+        <div class="tech-tags"><span class="tech-tag">Lambda</span><span class="tech-tag">S3</span><span class="tech-tag">RDS</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">🌐</div>
+        <div class="step-title">Google Cloud</div>
+        <p class="step-desc">Cloud Run, Cloud Functions, BigQuery. Scalable serverless compute.</p>
+        <div class="tech-tags"><span class="tech-tag">Cloud Run</span><span class="tech-tag">Firebase</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">▲</div>
+        <div class="step-title">Vercel</div>
+        <p class="step-desc">Edge deployment for Next.js. Instant global CDN, preview deployments.</p>
+        <div class="tech-tags"><span class="tech-tag">Edge</span><span class="tech-tag">Preview</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">⚡</div>
+        <div class="step-title">Supabase</div>
+        <p class="step-desc">PostgreSQL + Auth + Storage + Realtime. Open-source Firebase alternative.</p>
+        <div class="tech-tags"><span class="tech-tag">Auth</span><span class="tech-tag">Realtime</span></div>
+      </div>
+    </div>
+
+    <div class="section-header reveal">
+      <span class="section-number">AI</span>
+      <h2 class="section-title">Intelligence &amp; <em>Automation</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-icon">🧠</div>
+        <div class="step-title">OpenAI</div>
+        <p class="step-desc">GPT-4, DALL-E, Whisper. Content generation, image creation, speech-to-text.</p>
+        <div class="tech-tags"><span class="tech-tag">GPT-4</span><span class="tech-tag">Embeddings</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">🤖</div>
+        <div class="step-title">Anthropic Claude</div>
+        <p class="step-desc">Constitutional AI for safe, helpful assistance. Complex reasoning and analysis.</p>
+        <div class="tech-tags"><span class="tech-tag">Claude 3</span><span class="tech-tag">Sonnet</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">🔬</div>
+        <div class="step-title">Custom ML</div>
+        <p class="step-desc">Custom models for specific use cases. Classification, prediction, recommendation.</p>
+        <div class="tech-tags"><span class="tech-tag">TensorFlow</span><span class="tech-tag">PyTorch</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">🔄</div>
+        <div class="step-title">Automation</div>
+        <p class="step-desc">Workflow automation, data pipelines, scheduled jobs, webhooks, integrations.</p>
+        <div class="tech-tags"><span class="tech-tag">n8n</span><span class="tech-tag">Cron</span></div>
+      </div>
+    </div>
+
+    <div class="section-header reveal">
+      <span class="section-number">Integrations</span>
+      <h2 class="section-title">Third-Party <em>Services</em></h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="step-icon">💳</div>
+        <div class="step-title">Stripe</div>
+        <p class="step-desc">Payments, subscriptions, invoicing. PCI-compliant payment infrastructure.</p>
+        <div class="tech-tags"><span class="tech-tag">Checkout</span><span class="tech-tag">Connect</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">💰</div>
+        <div class="step-title">PayPal</div>
+        <p class="step-desc">Global payment processing. Trusted checkout for international customers.</p>
+        <div class="tech-tags"><span class="tech-tag">REST API</span><span class="tech-tag">Express</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">📊</div>
+        <div class="step-title">Salesforce</div>
+        <p class="step-desc">CRM integration. Lead capture, customer data sync, automated workflows.</p>
+        <div class="tech-tags"><span class="tech-tag">REST</span><span class="tech-tag">SOQL</span></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-icon">📈</div>
+        <div class="step-title">HubSpot</div>
+        <p class="step-desc">Marketing automation. Forms, email campaigns, contact management.</p>
+        <div class="tech-tags"><span class="tech-tag">Forms</span><span class="tech-tag">CRM</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="exclusive">
+    <div class="exclusive-bg"></div>
+    <div class="exclusive-content reveal">
+      <div class="exclusive-eyebrow">Ready?</div>
+      <h2 class="exclusive-title">Let's Build Something <em>Powerful</em></h2>
+      <p class="exclusive-desc">We choose the right tools for your project—never force-fitting templates or outdated tech. Modern stack, modern results.</p>
+      <a href="index.html#contact" class="btn-primary">Start Your Project</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Cinematic Web Works</div>
+      <ul class="footer-links">
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="platforms.html">Platforms</a></li>
+        <li><a href="industries.html">Industries</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="footer-right">
+        <div class="footer-copy">&copy; 2026 Cinematic Web Works. Crafted in Bahrain.</div>
+        <div class="footer-cr">Bahrain Nights W.L.L. &middot; CR 113587-1</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('nav');
+      if (window.scrollY > 80) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+    });
+    var reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(function(el) { el.classList.add('hidden-init'); });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); entry.target.classList.remove('hidden-init'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el) { observer.observe(el); });
+  </script>
+</body>
+</html>

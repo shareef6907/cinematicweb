@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0a0a0a !important;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  
+  <title>Web Application Development | Cinematic Web Works</title>
+  <meta name="description" content="Custom web application development using React, Next.js & Supabase. SaaS platforms, dashboards, portals & internal tools. From BD 3,000.">
+  <meta name="keywords" content="web application development, saas development, custom web app, react app development, dashboard development">
+  <meta name="author" content="Cinematic Web Works">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cinematicwebworks.com/services/web-application-development.html">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cinematicwebworks.com/services/web-application-development.html">
+  <meta property="og:title" content="Web Application Development | Cinematic Web Works">
+  <meta property="og:description" content="Custom web application development using React, Next.js & Supabase. SaaS platforms, dashboards & portals. From BD 3,000.">
+  <meta property="og:image" content="https://cinematicwebworks.com/og-image.png">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web Application Development",
+    "description": "Custom web application development including SaaS platforms, customer portals, admin dashboards, and internal business tools. Built with React, Next.js, and Supabase.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Cinematic Web Works",
+      "telephone": "+97339007750",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "BH",
+        "addressLocality": "Manama"
+      }
+    },
+    "areaServed": ["Bahrain", "Saudi Arabia", "UAE", "Qatar", "Kuwait", "Oman"],
+    "serviceType": "Web Application Development",
+    "offers": {
+      "@type": "Offer",
+      "price": "3000",
+      "priceCurrency": "BHD",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "3000",
+        "priceCurrency": "BHD",
+        "valueAddedTaxIncluded": true
+      }
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the difference between a website and a web application?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A website primarily displays information and is mostly read-only. A web application is interactive — users can input data, perform actions, and see dynamic results. Examples include online banking, project management tools like Trello, or booking systems. If users need to log in and do something, it's likely a web application."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a web application?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Web applications typically take 2-6 months depending on complexity. A simple portal or dashboard might take 6-8 weeks, while a full SaaS platform with multiple user roles, billing, and advanced features could take 4-6 months. We use agile development with regular milestones so you see progress throughout."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you build a SaaS platform with subscription billing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we build complete SaaS platforms including user authentication, subscription management, usage-based billing, and payment processing through Stripe. We handle the entire technical stack so you can focus on your business logic and customer acquisition."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide hosting for web applications?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we deploy web applications on Vercel (frontend) and Supabase (backend) which provide enterprise-grade hosting with automatic scaling, SSL, and global CDN distribution. For applications with specific compliance requirements, we can also deploy on AWS, Google Cloud, or Azure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you integrate with our existing systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We regularly integrate with existing CRMs (Salesforce, HubSpot), ERPs, payment systems, and third-party APIs. We can also build custom APIs to connect your new web application with legacy systems that need to share data."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you handle data security in web applications?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Security is built into every layer. We implement secure authentication (including 2FA), encrypt sensitive data, use row-level security in databases, conduct security audits, and follow OWASP best practices. For applications handling financial or health data, we can implement additional compliance measures."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #2a2a2a #0a0a0a; background: #0a0a0a !important; }
+    body { font-family: 'DM Sans', sans-serif; background: #0a0a0a !important; color: #c8c8c8 !important; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 28px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s ease; }
+    nav.scrolled { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(20px); padding: 18px 50px; }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: #f0f0f0 !important; text-decoration: none; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { color: #888 !important; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s ease; }
+    .nav-links a:hover { color: #f0f0f0 !important; }
+    .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #c9a84c !important; text-decoration: none; border: 1px solid #c9a84c; padding: 10px 28px; transition: all 0.3s ease; }
+    .nav-cta:hover { background: #c9a84c; color: #0a0a0a !important; }
+    .hero { height: 60vh; position: relative; display: flex; align-items: center; justify-content: center; background: #0a0a0a !important; }
+    .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 20% 50%, rgba(76,132,201,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.05) 0%, transparent 50%); }
+    .hero-content { text-align: center; z-index: 11; max-width: 950px; padding: 100px 40px 0; }
+    .hero-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 8px; color: #c9a84c !important; margin-bottom: 30px; animation: fadeUp 0.6s ease forwards; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 60px); font-weight: 900; line-height: 1.1; color: #f0f0f0 !important; margin-bottom: 20px; animation: fadeUp 0.6s ease 0.1s forwards; opacity: 0; }
+    .hero-title em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
+    .hero-subtitle { font-size: 18px; color: #888 !important; max-width: 600px; margin: 0 auto; line-height: 1.7; animation: fadeUp 0.6s ease 0.2s forwards; opacity: 0; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .content-section { padding: 80px 50px; max-width: 900px; margin: 0 auto; }
+    .content-section h2 { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #f0f0f0 !important; margin-bottom: 25px; }
+    .content-section h2 em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
+    .content-section h3 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: #c9a84c !important; margin: 40px 0 15px; }
+    .content-section p { color: #c8c8c8 !important; font-size: 17px; line-height: 1.8; margin-bottom: 20px; }
+    .content-section ul { margin: 20px 0 30px 20px; }
+    .content-section li { color: #c8c8c8 !important; font-size: 16px; line-height: 1.8; margin-bottom: 10px; }
+    .content-section a { color: #c9a84c !important; text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.3); }
+    .content-section a:hover { border-color: #c9a84c; }
+    .highlight-box { background: #111 !important; border: 1px solid rgba(201,168,76,0.2); padding: 30px; margin: 30px 0; }
+    .price-box { background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(201,168,76,0.02) 100%) !important; border: 1px solid rgba(201,168,76,0.3); padding: 40px; margin: 40px 0; text-align: center; }
+    .price-box .price { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 900; color: #c9a84c !important; }
+    .price-box .price-note { font-size: 14px; color: #888 !important; margin-top: 10px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
+    .process-step { background: #111 !important; border: 1px solid #2a2a2a; padding: 25px; text-align: center; }
+    .process-step .number { font-family: 'Playfair Display', serif; font-size: 36px; color: rgba(201,168,76,0.3) !important; margin-bottom: 15px; }
+    .process-step .title { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 2px; color: #f0f0f0 !important; margin-bottom: 10px; }
+    .process-step .desc { font-size: 13px; color: #888 !important; line-height: 1.6; }
+    .app-types-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 40px 0; }
+    .app-type { background: #111 !important; border: 1px solid #2a2a2a; padding: 30px; }
+    .app-type .name { font-family: 'Bebas Neue', sans-serif; font-size: 20px; letter-spacing: 2px; color: #f0f0f0 !important; margin-bottom: 12px; }
+    .app-type .desc { font-size: 14px; color: #888 !important; line-height: 1.7; }
+    .faq-section { padding: 80px 50px; max-width: 900px; margin: 0 auto; }
+    .faq-section h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: #f0f0f0 !important; margin-bottom: 40px; text-align: center; }
+    .faq-item { border-bottom: 1px solid #2a2a2a; padding: 25px 0; }
+    .faq-question { font-size: 18px; font-weight: 500; color: #f0f0f0 !important; margin-bottom: 15px; }
+    .faq-answer { color: #888 !important; font-size: 16px; line-height: 1.7; }
+    .cta-section { padding: 100px 50px; text-align: center; background: #111 !important; border-top: 1px solid rgba(255,255,255,0.04); }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 48px); color: #f0f0f0 !important; margin-bottom: 20px; }
+    .cta-section h2 em { font-style: italic; color: #c9a84c !important; }
+    .cta-section p { color: #888 !important; font-size: 17px; max-width: 500px; margin: 0 auto 40px; }
+    .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; padding: 16px 45px; background: #c9a84c !important; color: #0a0a0a !important; text-decoration: none; transition: all 0.3s ease; }
+    .btn-primary:hover { background: #d4b35a !important; transform: translateY(-2px); }
+    .btn-whatsapp { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; padding: 16px 45px; background: #25D366 !important; color: #fff !important; text-decoration: none; display: inline-flex; align-items: center; gap: 12px; transition: all 0.3s ease; }
+    .btn-whatsapp:hover { background: #20bd5a !important; transform: translateY(-2px); }
+    .contact-info { margin-top: 40px; display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; }
+    .contact-item { text-align: center; }
+    .contact-label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #c9a84c !important; margin-bottom: 8px; }
+    .contact-value { color: #888 !important; font-size: 15px; }
+    .contact-value a { color: #888 !important; text-decoration: none; }
+    .internal-links { padding: 60px 50px; max-width: 900px; margin: 0 auto; }
+    .internal-links h3 { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 3px; color: #888 !important; margin-bottom: 20px; }
+    .internal-links-grid { display: flex; flex-wrap: wrap; gap: 15px; }
+    .internal-links a { font-size: 14px; color: #c9a84c !important; text-decoration: none; padding: 8px 16px; border: 1px solid #2a2a2a; transition: all 0.3s ease; }
+    .internal-links a:hover { border-color: #c9a84c; background: rgba(201,168,76,0.1); }
+    footer { padding: 60px 50px; border-top: 1px solid rgba(255,255,255,0.04); background: #111 !important; }
+    .footer-inner { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 4px; color: #888 !important; }
+    .footer-links { display: flex; gap: 30px; list-style: none; }
+    .footer-links a { color: #888 !important; text-decoration: none; font-size: 13px; }
+    .footer-links a:hover { color: #c9a84c !important; }
+    .footer-right { text-align: right; }
+    .footer-copy { font-size: 12px; color: #2a2a2a !important; }
+    @media (max-width: 768px) { 
+      nav { padding: 20px 25px; } 
+      .nav-links { display: none; } 
+      .hero-content { padding: 80px 25px 0; } 
+      .content-section, .faq-section, .cta-section, .internal-links { padding: 60px 25px; }
+      .process-grid, .app-types-grid { grid-template-columns: 1fr; }
+      footer { padding: 40px 25px; } 
+      .footer-inner { flex-direction: column; gap: 20px; text-align: center; } 
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn-primary, .btn-whatsapp { width: 100%; max-width: 280px; text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <a href="../index.html" class="nav-logo">Cinematic Web Works</a>
+    <ul class="nav-links">
+      <li><a href="../solutions.html">Solutions</a></li>
+      <li><a href="../platforms.html">Platforms</a></li>
+      <li><a href="../industries.html">Industries</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#contact" class="nav-cta">Start a Project</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Digital Products</div>
+      <h1 class="hero-title">Web Application Development —<br><em>Beyond Websites, Into Products</em></h1>
+      <p class="hero-subtitle">Custom web applications that solve real problems. SaaS platforms, customer portals, dashboards, and internal tools built to scale.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Building <em>Digital Products</em> That Work</h2>
+    
+    <p>There comes a point when a website isn't enough. When your business needs users to log in, interact with data, and perform complex actions, you need a web application. At Cinematic Web Works, we build custom web applications that transform how businesses operate and serve their customers.</p>
+    
+    <p>Web applications are our technical sweet spot. Our founder's background as a senior developer means we approach every project with deep technical expertise, not just design sensibility. We understand the architecture, the security implications, the scaling challenges — and we build applications that are robust enough for enterprise use while remaining elegant and intuitive.</p>
+    
+    <p>Whether you're launching a SaaS product, digitizing internal processes, or creating a customer-facing portal, we have the expertise to take your idea from concept to production. Our applications are built on modern infrastructure that scales automatically, so your application can grow from 10 users to 10,000 without missing a beat.</p>
+    
+    <div class="price-box">
+      <div class="price">Starting BD 3,000</div>
+      <div class="price-note">Custom web applications with authentication, database, and API</div>
+    </div>
+    
+    <h3>Types of Web Applications We Build</h3>
+    
+    <div class="app-types-grid">
+      <div class="app-type">
+        <div class="name">SaaS Platforms</div>
+        <div class="desc">Multi-tenant software-as-a-service applications with user management, subscription billing, and feature-rich dashboards. Perfect for productizing your expertise or building a recurring revenue business.</div>
+      </div>
+      <div class="app-type">
+        <div class="name">Customer Portals</div>
+        <div class="desc">Secure self-service areas where your customers can view orders, manage accounts, access documents, and interact with your team. Reduce support load and improve customer satisfaction.</div>
+      </div>
+      <div class="app-type">
+        <div class="name">Admin Dashboards</div>
+        <div class="desc">Internal tools for managing your business operations — from content management to analytics to workflow automation. Built specifically for how your team works.</div>
+      </div>
+      <div class="app-type">
+        <div class="name">Booking Systems</div>
+        <div class="desc">Custom reservation and appointment scheduling platforms with calendar management, payment processing, and automated notifications. For clinics, salons, consultants, and service businesses.</div>
+      </div>
+      <div class="app-type">
+        <div class="name">Internal Tools</div>
+        <div class="desc">Replace spreadsheets and manual processes with purpose-built applications. Inventory management, CRM systems, project trackers, and workflow tools tailored to your operations.</div>
+      </div>
+      <div class="app-type">
+        <div class="name">Marketplace Platforms</div>
+        <div class="desc">Two-sided platforms connecting buyers and sellers, service providers and customers, or any parties needing to transact. With user verification, messaging, and payment escrow.</div>
+      </div>
+    </div>
+    
+    <h3>Our Development Process</h3>
+    
+    <p>Building a web application is more complex than building a website. Our process is designed to manage that complexity while keeping you informed and in control every step of the way.</p>
+    
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="number">01</div>
+        <div class="title">Discovery</div>
+        <div class="desc">Requirements gathering, user stories, technical architecture planning</div>
+      </div>
+      <div class="process-step">
+        <div class="number">02</div>
+        <div class="title">Design</div>
+        <div class="desc">UI/UX design, prototyping, user flow validation</div>
+      </div>
+      <div class="process-step">
+        <div class="number">03</div>
+        <div class="title">Development</div>
+        <div class="desc">Agile sprints with weekly demos and continuous integration</div>
+      </div>
+      <div class="process-step">
+        <div class="number">04</div>
+        <div class="title">Launch</div>
+        <div class="desc">Testing, deployment, monitoring, and iteration</div>
+      </div>
+    </div>
+    
+    <p><strong>Discovery & Planning:</strong> We start by deeply understanding your business problem. What are users trying to accomplish? What data needs to be managed? What systems need integration? We document everything in user stories and create a technical architecture that will scale with your needs.</p>
+    
+    <p><strong>Design & Prototyping:</strong> Before writing production code, we design every screen and interaction. You'll see clickable prototypes that demonstrate exactly how the application will work. This catches issues early when they're cheap to fix, not after development has begun.</p>
+    
+    <p><strong>Agile Development:</strong> We work in 2-week sprints, delivering working software at the end of each cycle. You'll see your application take shape incrementally, with opportunities to adjust priorities based on what you learn. No more waiting months to see if we understood your requirements correctly.</p>
+    
+    <p><strong>Launch & Iteration:</strong> Going live is just the beginning. We deploy with comprehensive monitoring to catch issues immediately, and we plan for post-launch iterations based on real user feedback. Great applications are never finished — they evolve with your business.</p>
+    
+    <h3>Technology Stack</h3>
+    
+    <p>We've carefully selected technologies that provide the best balance of developer productivity, application performance, and long-term maintainability:</p>
+    
+    <ul>
+      <li><strong>Frontend - Next.js 14 & React:</strong> The industry-standard framework for building complex user interfaces. Server-side rendering for SEO, client-side interactivity for rich experiences, and a massive ecosystem of components and tools.</li>
+      <li><strong>Backend - Supabase:</strong> An open-source Firebase alternative providing PostgreSQL database, authentication, file storage, and real-time subscriptions. Enterprise-grade infrastructure without vendor lock-in.</li>
+      <li><strong>Styling - Tailwind CSS:</strong> Utility-first CSS framework that enables rapid, consistent UI development. Every component is custom-designed to your brand, not pulled from a template library.</li>
+      <li><strong>Deployment - Vercel:</strong> Automatic deployments, global edge network, and built-in scaling. Your application loads fast for users anywhere in the world.</li>
+    </ul>
+    
+    <h3>Case Study: BahrainNights.com Platform</h3>
+    
+    <div class="highlight-box">
+      <p><strong>Project:</strong> Complete rebuild of Bahrain's entertainment guide as a modern web application</p>
+      <p><strong>Features:</strong> Venue management, event calendar, user-submitted content, real-time updates, admin dashboard</p>
+      <p><strong>Technology:</strong> Next.js 14, Supabase, Tailwind CSS, deployed on Vercel</p>
+      <p><strong>Results:</strong> Platform handles thousands of daily visitors, content team can update listings in real-time, and the modular architecture allows rapid feature development</p>
+    </div>
+    
+    <p>BahrainNights.com showcases what's possible when you move beyond a traditional website to a true web application. The platform includes a public-facing site for visitors, a content management dashboard for the editorial team, and a venue portal for businesses to manage their own listings. All built on a unified codebase that's easy to maintain and extend.</p>
+    
+    <h3>Security & Compliance</h3>
+    
+    <p>Web applications handle sensitive data. We take security seriously at every level:</p>
+    
+    <ul>
+      <li><strong>Authentication:</strong> Secure login with email/password, social providers, and optional two-factor authentication</li>
+      <li><strong>Authorization:</strong> Row-level security ensuring users only access their own data</li>
+      <li><strong>Encryption:</strong> All data encrypted in transit (HTTPS) and at rest</li>
+      <li><strong>Audit Logging:</strong> Track who did what and when for compliance requirements</li>
+      <li><strong>Regular Updates:</strong> Dependencies kept current to patch security vulnerabilities</li>
+    </ul>
+    
+    <p>For applications with specific compliance requirements (GDPR, PCI, healthcare), we implement additional measures and can provide documentation for audits.</p>
+    
+    <h3>Pricing</h3>
+    
+    <p>Web application projects are priced based on scope and complexity. Here's a general guide:</p>
+    
+    <ul>
+      <li><strong>Simple Applications:</strong> BD 3,000 - 6,000 — Single-purpose tools like booking systems, calculators, or basic portals</li>
+      <li><strong>Medium Applications:</strong> BD 6,000 - 15,000 — Multi-feature applications with user roles, integrations, and custom functionality</li>
+      <li><strong>Complex Platforms:</strong> BD 15,000 - 40,000+ — Full SaaS products, marketplace platforms, or enterprise applications</li>
+    </ul>
+    
+    <p>We provide detailed fixed-price or time-and-materials quotes after the discovery phase. Ongoing maintenance and support packages are also available.</p>
+  </section>
+
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">What is the difference between a website and a web application?</div>
+      <div class="faq-answer">A website primarily displays information and is mostly read-only. A web application is interactive — users can input data, perform actions, and see dynamic results. Examples include online banking, project management tools like Trello, or booking systems. If users need to log in and do something, it's likely a web application.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">How long does it take to build a web application?</div>
+      <div class="faq-answer">Web applications typically take 2-6 months depending on complexity. A simple portal or dashboard might take 6-8 weeks, while a full SaaS platform with multiple user roles, billing, and advanced features could take 4-6 months. We use agile development with regular milestones so you see progress throughout.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Can you build a SaaS platform with subscription billing?</div>
+      <div class="faq-answer">Yes, we build complete SaaS platforms including user authentication, subscription management, usage-based billing, and payment processing through Stripe. We handle the entire technical stack so you can focus on your business logic and customer acquisition.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Do you provide hosting for web applications?</div>
+      <div class="faq-answer">Yes, we deploy web applications on Vercel (frontend) and Supabase (backend) which provide enterprise-grade hosting with automatic scaling, SSL, and global CDN distribution. For applications with specific compliance requirements, we can also deploy on AWS, Google Cloud, or Azure.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Can you integrate with our existing systems?</div>
+      <div class="faq-answer">Absolutely. We regularly integrate with existing CRMs (Salesforce, HubSpot), ERPs, payment systems, and third-party APIs. We can also build custom APIs to connect your new web application with legacy systems that need to share data.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">How do you handle data security in web applications?</div>
+      <div class="faq-answer">Security is built into every layer. We implement secure authentication (including 2FA), encrypt sensitive data, use row-level security in databases, conduct security audits, and follow OWASP best practices. For applications handling financial or health data, we can implement additional compliance measures.</div>
+    </div>
+  </section>
+
+  <section class="internal-links">
+    <h3>Related Services</h3>
+    <div class="internal-links-grid">
+      <a href="custom-web-development.html">Custom Web Development</a>
+      <a href="next-js-development.html">Next.js Development</a>
+      <a href="react-development.html">React Development</a>
+      <a href="website-maintenance.html">Website Maintenance</a>
+    </div>
+    <h3 style="margin-top: 30px;">Service Areas</h3>
+    <div class="internal-links-grid">
+      <a href="../web-development-bahrain.html">Web Development Bahrain</a>
+      <a href="../web-development-dubai.html">Web Development Dubai</a>
+      <a href="../web-development-riyadh.html">Web Development Riyadh</a>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Build <em>Your Application?</em></h2>
+    <p>Let's discuss your idea and turn it into a working product.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/97339007750?text=Hi%2C%20I%27m%20interested%20in%20web%20application%20development." target="_blank" class="btn-whatsapp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="mailto:ceo@bahrainnights.com" class="btn-primary">Email Us</a>
+    </div>
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value">+973 3900 7750</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:ceo@bahrainnights.com">ceo@bahrainnights.com</a></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Cinematic Web Works</div>
+      <ul class="footer-links">
+        <li><a href="../solutions.html">Solutions</a></li>
+        <li><a href="../platforms.html">Platforms</a></li>
+        <li><a href="../industries.html">Industries</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <div class="footer-right">
+        <div class="footer-copy">&copy; 2025 Cinematic Web Works</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      var nav = document.getElementById('nav');
+      if (window.scrollY > 80) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+    });
+  </script>
+</body>
+</html>

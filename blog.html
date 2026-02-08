@@ -84,14 +84,17 @@
       inset: 0;
     }
     
-    .trailer-container iframe {
+    .hero-video {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 300%;
-      height: 300%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
       transform: translate(-50%, -50%);
-      pointer-events: none;
+      object-fit: cover;
+      opacity: 0.7;
     }
     
     .hero-overlay {
@@ -457,30 +460,22 @@
     </ul>
   </nav>
 
-  <!-- Hero Trailer Section -->
+  <!-- Hero Video Section -->
   <section class="hero" id="hero">
-    <div class="trailer-container" id="trailerContainer">
-      <!-- YouTube iframe injected by JS -->
+    <div class="trailer-container">
+      <video class="hero-video" src="showreel.mp4" autoplay playsinline muted loop></video>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-overlay-bottom"></div>
     
     <div class="hero-content">
-      <span class="hero-badge" id="heroBadge">Featured</span>
-      <h1 class="hero-title" id="heroTitle">Loading...</h1>
-      <p class="hero-description" id="heroDescription"></p>
+      <span class="hero-badge">Insights & Ideas</span>
+      <h1 class="hero-title">Web Development Blog</h1>
+      <p class="hero-description">Expert insights on web development, design trends, and digital strategy for businesses in the GCC region.</p>
       <div class="hero-buttons">
-        <button class="btn btn-primary" id="soundBtn" onclick="toggleSound()">
-          🔊 Enable Sound
-        </button>
-        <a href="#articles" class="btn btn-secondary">Explore Articles</a>
+        <a href="#articles" class="btn btn-primary">Explore Articles</a>
       </div>
     </div>
-    
-    <button class="arrow-btn trailer-arrows left" onclick="prevTrailer()">‹</button>
-    <button class="arrow-btn trailer-arrows right" onclick="nextTrailer()">›</button>
-    
-    <div class="trailer-nav" id="trailerNav"></div>
   </section>
 
   <!-- Stats Bar -->
@@ -549,31 +544,6 @@
   </footer>
 
   <script>
-    // Trailers data - replace videoId with your own YouTube video IDs
-    const trailers = [
-      {
-        id: 1,
-        title: "Websites That Convert",
-        description: "Custom-coded platforms that drive real business results. No templates. Pure craft.",
-        videoId: "NOhDyUmT9z0", // Replace with your trailer
-        category: "Showreel"
-      },
-      {
-        id: 2,
-        title: "GCC Digital Excellence",
-        description: "From Bahrain to Dubai to Riyadh — enterprise solutions across the Gulf.",
-        videoId: "d9MyW72ELq0", // Replace with your trailer
-        category: "Case Study"
-      },
-      {
-        id: 3,
-        title: "The Cinematic Difference",
-        description: "We don't build websites. We direct digital experiences.",
-        videoId: "mqqft2x_Aa4", // Replace with your trailer
-        category: "Philosophy"
-      }
-    ];
-
     // Blog posts data
     const blogPosts = [
       {
@@ -583,7 +553,7 @@
         date: "February 2026",
         readTime: "8 min",
         category: "technology",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop"
+        image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&h=450&fit=crop"
       },
       {
         slug: "hiring-web-development-agency-gcc",
@@ -592,7 +562,7 @@
         date: "February 2026",
         readTime: "10 min",
         category: "guide",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop"
+        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=450&fit=crop"
       },
       {
         slug: "bahrain-web-agencies-uae-businesses",
@@ -601,92 +571,14 @@
         date: "February 2026",
         readTime: "7 min",
         category: "business",
-        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop"
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=450&fit=crop"
       }
     ];
 
-    let currentTrailer = 0;
-    let isMuted = true;
-    let autoAdvanceTimer;
-
     // Initialize
     document.addEventListener('DOMContentLoaded', () => {
-      renderTrailer();
-      renderTrailerNav();
       renderBlogRows();
-      startAutoAdvance();
     });
-
-    function renderTrailer() {
-      const trailer = trailers[currentTrailer];
-      const container = document.getElementById('trailerContainer');
-      
-      container.innerHTML = `
-        <iframe 
-          id="ytPlayer"
-          src="https://www.youtube.com/embed/${trailer.videoId}?autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=${trailer.videoId}&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1&playsinline=1"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          style="border:none"
-        ></iframe>
-      `;
-      
-      document.getElementById('heroBadge').textContent = trailer.category;
-      document.getElementById('heroTitle').textContent = trailer.title;
-      document.getElementById('heroDescription').textContent = trailer.description;
-      
-      updateTrailerNav();
-      updateSoundButton();
-    }
-
-    function renderTrailerNav() {
-      const nav = document.getElementById('trailerNav');
-      nav.innerHTML = trailers.map((_, i) => 
-        `<button class="trailer-dot ${i === currentTrailer ? 'active' : ''}" onclick="goToTrailer(${i})"></button>`
-      ).join('');
-    }
-
-    function updateTrailerNav() {
-      document.querySelectorAll('.trailer-dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentTrailer);
-      });
-    }
-
-    function goToTrailer(index) {
-      currentTrailer = index;
-      renderTrailer();
-      resetAutoAdvance();
-    }
-
-    function nextTrailer() {
-      currentTrailer = (currentTrailer + 1) % trailers.length;
-      renderTrailer();
-      resetAutoAdvance();
-    }
-
-    function prevTrailer() {
-      currentTrailer = (currentTrailer - 1 + trailers.length) % trailers.length;
-      renderTrailer();
-      resetAutoAdvance();
-    }
-
-    function toggleSound() {
-      isMuted = !isMuted;
-      renderTrailer();
-    }
-
-    function updateSoundButton() {
-      const btn = document.getElementById('soundBtn');
-      btn.innerHTML = isMuted ? '🔊 Enable Sound' : '🔇 Mute';
-    }
-
-    function startAutoAdvance() {
-      autoAdvanceTimer = setInterval(nextTrailer, 25000);
-    }
-
-    function resetAutoAdvance() {
-      clearInterval(autoAdvanceTimer);
-      startAutoAdvance();
-    }
 
     function renderBlogRows() {
       const featured = document.getElementById('featuredRow');

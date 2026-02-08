@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0a0a0a !important;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <title>Web Development Blog | Cinematic Web Works</title>
+  <meta name="description" content="Expert insights on web development, SEO, and digital strategy for businesses in Bahrain, Dubai, Saudi Arabia, and the GCC region.">
+  <link rel="canonical" href="https://cinematicwebworks.com/blog.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cinematicwebworks.com/blog.html">
+  <meta property="og:title" content="Web Development Blog | Cinematic Web Works">
+  <meta property="og:description" content="Expert insights on web development for GCC businesses.">
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    }
+    
+    .nav-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .nav-logo span {
+      background: linear-gradient(to right, #f59e0b, #ea580c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    
+    .nav-links a:hover { color: #fff; }
+    
+    /* Hero Trailer Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 85vh;
+      overflow: hidden;
+      background: #000;
+    }
+    
+    .trailer-container {
+      position: absolute;
+      inset: 0;
+    }
+    
+    .trailer-container iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.5), transparent);
+    }
+    
+    .hero-overlay-bottom {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #0a0a0a, transparent 40%, transparent);
+    }
+    
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      padding: 0 4rem;
+      max-width: 600px;
+      z-index: 10;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: #f59e0b;
+      color: #000;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 20px rgba(0,0,0,0.8);
+    }
+    
+    .hero-description {
+      font-size: 1.25rem;
+      color: #d1d5db;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 10px rgba(0,0,0,0.8);
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(to right, #f59e0b, #ea580c);
+      color: #000;
+    }
+    
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.4);
+    }
+    
+    .btn-secondary {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.3);
+    }
+    
+    /* Trailer Navigation */
+    .trailer-nav {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 20;
+    }
+    
+    .trailer-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .trailer-dot.active {
+      width: 40px;
+      border-radius: 4px;
+      background: #f59e0b;
+    }
+    
+    .trailer-arrows {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 20;
+    }
+    
+    .trailer-arrows.left { left: 1rem; }
+    .trailer-arrows.right { right: 1rem; }
+    
+    .arrow-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.6);
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .arrow-btn:hover {
+      background: rgba(0,0,0,0.9);
+    }
+    
+    /* Stats Bar */
+    .stats-bar {
+      position: relative;
+      z-index: 30;
+      margin-top: -4rem;
+      padding: 0 2rem;
+    }
+    
+    .stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(to right, rgba(245,158,11,0.15), rgba(234,88,12,0.15));
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      backdrop-filter: blur(10px);
+    }
+    
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    
+    .stat-item h3 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #f59e0b;
+    }
+    
+    .stat-item p {
+      font-size: 0.875rem;
+      color: #9ca3af;
+    }
+    
+    /* Content Rows */
+    .content-section {
+      padding: 2rem 0;
+    }
+    
+    .row-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .row-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .row-see-all {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .row-see-all:hover { color: #f59e0b; }
+    
+    /* Cards Container */
+    .cards-container {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding: 0 2rem 1rem;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    
+    .cards-container::-webkit-scrollbar { display: none; }
+    
+    /* Card */
+    .card {
+      flex-shrink: 0;
+      width: 320px;
+      aspect-ratio: 16/10;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      scroll-snap-align: start;
+      transition: transform 0.3s, z-index 0s;
+    }
+    
+    .card:hover {
+      transform: scale(1.05);
+      z-index: 10;
+    }
+    
+    .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    
+    .card:hover .card-image {
+      transform: scale(1.1);
+    }
+    
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3), transparent);
+    }
+    
+    .card-category {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+      border-radius: 4px;
+    }
+    
+    .card-category.pricing { background: linear-gradient(to right, #10b981, #059669); }
+    .card-category.guide { background: linear-gradient(to right, #3b82f6, #0891b2); }
+    .card-category.business { background: linear-gradient(to right, #8b5cf6, #7c3aed); }
+    .card-category.technology { background: linear-gradient(to right, #f59e0b, #ea580c); }
+    
+    .card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem;
+    }
+    
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: color 0.2s;
+    }
+    
+    .card:hover .card-title { color: #fbbf24; }
+    
+    .card-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      padding: 4rem 2rem;
+    }
+    
+    .cta-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      background: linear-gradient(to right, rgba(245,158,11,0.15), rgba(234,88,12,0.15));
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 1.5rem;
+      padding: 3rem;
+    }
+    
+    .cta-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-text {
+      color: #9ca3af;
+      margin-bottom: 2rem;
+    }
+    
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-content { padding: 0 1.5rem; }
+      .hero-title { font-size: 2rem; }
+      .hero-description { font-size: 1rem; }
+      .stats-grid { gap: 1.5rem; }
+      .card { width: 260px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><span>Cinematic</span> Web Works</a>
+    <ul class="nav-links">
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="platforms.html">Platforms</a></li>
+      <li><a href="industries.html">Industries</a></li>
+      <li><a href="technology.html">Technology</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" style="color:#f59e0b">Blog</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Trailer Section -->
+  <section class="hero" id="hero">
+    <div class="trailer-container" id="trailerContainer">
+      <!-- YouTube iframe injected by JS -->
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-overlay-bottom"></div>
+    
+    <div class="hero-content">
+      <span class="hero-badge" id="heroBadge">Featured</span>
+      <h1 class="hero-title" id="heroTitle">Loading...</h1>
+      <p class="hero-description" id="heroDescription"></p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" id="soundBtn" onclick="toggleSound()">
+          🔊 Enable Sound
+        </button>
+        <a href="#articles" class="btn btn-secondary">Explore Articles</a>
+      </div>
+    </div>
+    
+    <button class="arrow-btn trailer-arrows left" onclick="prevTrailer()">‹</button>
+    <button class="arrow-btn trailer-arrows right" onclick="nextTrailer()">›</button>
+    
+    <div class="trailer-nav" id="trailerNav"></div>
+  </section>
+
+  <!-- Stats Bar -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>25+</h3>
+          <p>Platforms Built</p>
+        </div>
+        <div class="stat-item">
+          <h3>500+</h3>
+          <p>Pages Deployed</p>
+        </div>
+        <div class="stat-item">
+          <h3>15+</h3>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-item">
+          <h3>0</h3>
+          <p>Templates Used</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Rows -->
+  <section class="content-section" id="articles">
+    <!-- Featured Row -->
+    <div class="row-header">
+      <h2 class="row-title">⭐ Featured Articles</h2>
+    </div>
+    <div class="cards-container" id="featuredRow"></div>
+    
+    <!-- Pricing Row -->
+    <div class="row-header">
+      <h2 class="row-title">💰 Pricing & Budgets</h2>
+    </div>
+    <div class="cards-container" id="pricingRow"></div>
+    
+    <!-- Guides Row -->
+    <div class="row-header">
+      <h2 class="row-title">📚 Guides & How-To</h2>
+    </div>
+    <div class="cards-container" id="guidesRow"></div>
+    
+    <!-- Business Row -->
+    <div class="row-header">
+      <h2 class="row-title">📈 Business Strategy</h2>
+    </div>
+    <div class="cards-container" id="businessRow"></div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 class="cta-title">Ready to Build Something Epic?</h2>
+      <p class="cta-text">Get a free consultation and quote for your web development project.</p>
+      <a href="index.html#contact" class="btn btn-primary">Start Your Project</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 Cinematic Web Works. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Trailers data - replace videoId with your own YouTube video IDs
+    const trailers = [
+      {
+        id: 1,
+        title: "Websites That Convert",
+        description: "Custom-coded platforms that drive real business results. No templates. Pure craft.",
+        videoId: "NOhDyUmT9z0", // Replace with your trailer
+        category: "Showreel"
+      },
+      {
+        id: 2,
+        title: "GCC Digital Excellence",
+        description: "From Bahrain to Dubai to Riyadh — enterprise solutions across the Gulf.",
+        videoId: "d9MyW72ELq0", // Replace with your trailer
+        category: "Case Study"
+      },
+      {
+        id: 3,
+        title: "The Cinematic Difference",
+        description: "We don't build websites. We direct digital experiences.",
+        videoId: "mqqft2x_Aa4", // Replace with your trailer
+        category: "Philosophy"
+      }
+    ];
+
+    // Blog posts data
+    const blogPosts = [
+      {
+        slug: "web-development-cost-bahrain-2026",
+        title: "How Much Does Web Development Cost in Bahrain? (2026 Guide)",
+        excerpt: "A comprehensive breakdown of website development costs in Bahrain.",
+        date: "February 2026",
+        readTime: "8 min",
+        category: "pricing",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop"
+      },
+      {
+        slug: "hiring-web-development-agency-gcc",
+        title: "Top 10 Things to Look for When Hiring a Web Development Agency in the GCC",
+        excerpt: "Essential criteria for choosing the right web development partner.",
+        date: "February 2026",
+        readTime: "10 min",
+        category: "guide",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop"
+      },
+      {
+        slug: "bahrain-web-agencies-uae-businesses",
+        title: "Why Bahrain-Based Web Agencies Are the Smart Choice for UAE Businesses",
+        excerpt: "Discover how UAE companies are saving 30-50% by partnering with Bahrain agencies.",
+        date: "February 2026",
+        readTime: "7 min",
+        category: "business",
+        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop"
+      }
+    ];
+
+    let currentTrailer = 0;
+    let isMuted = true;
+    let autoAdvanceTimer;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTrailer();
+      renderTrailerNav();
+      renderBlogRows();
+      startAutoAdvance();
+    });
+
+    function renderTrailer() {
+      const trailer = trailers[currentTrailer];
+      const container = document.getElementById('trailerContainer');
+      
+      container.innerHTML = `
+        <iframe 
+          id="ytPlayer"
+          src="https://www.youtube.com/embed/${trailer.videoId}?autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=${trailer.videoId}&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&disablekb=1&enablejsapi=1&playsinline=1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          style="border:none"
+        ></iframe>
+      `;
+      
+      document.getElementById('heroBadge').textContent = trailer.category;
+      document.getElementById('heroTitle').textContent = trailer.title;
+      document.getElementById('heroDescription').textContent = trailer.description;
+      
+      updateTrailerNav();
+      updateSoundButton();
+    }
+
+    function renderTrailerNav() {
+      const nav = document.getElementById('trailerNav');
+      nav.innerHTML = trailers.map((_, i) => 
+        `<button class="trailer-dot ${i === currentTrailer ? 'active' : ''}" onclick="goToTrailer(${i})"></button>`
+      ).join('');
+    }
+
+    function updateTrailerNav() {
+      document.querySelectorAll('.trailer-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentTrailer);
+      });
+    }
+
+    function goToTrailer(index) {
+      currentTrailer = index;
+      renderTrailer();
+      resetAutoAdvance();
+    }
+
+    function nextTrailer() {
+      currentTrailer = (currentTrailer + 1) % trailers.length;
+      renderTrailer();
+      resetAutoAdvance();
+    }
+
+    function prevTrailer() {
+      currentTrailer = (currentTrailer - 1 + trailers.length) % trailers.length;
+      renderTrailer();
+      resetAutoAdvance();
+    }
+
+    function toggleSound() {
+      isMuted = !isMuted;
+      renderTrailer();
+    }
+
+    function updateSoundButton() {
+      const btn = document.getElementById('soundBtn');
+      btn.innerHTML = isMuted ? '🔊 Enable Sound' : '🔇 Mute';
+    }
+
+    function startAutoAdvance() {
+      autoAdvanceTimer = setInterval(nextTrailer, 25000);
+    }
+
+    function resetAutoAdvance() {
+      clearInterval(autoAdvanceTimer);
+      startAutoAdvance();
+    }
+
+    function renderBlogRows() {
+      const featured = document.getElementById('featuredRow');
+      const pricing = document.getElementById('pricingRow');
+      const guides = document.getElementById('guidesRow');
+      const business = document.getElementById('businessRow');
+
+      // Render all in featured
+      featured.innerHTML = blogPosts.map(renderCard).join('');
+      
+      // Render by category
+      pricing.innerHTML = blogPosts.filter(p => p.category === 'pricing').map(renderCard).join('');
+      guides.innerHTML = blogPosts.filter(p => p.category === 'guide').map(renderCard).join('');
+      business.innerHTML = blogPosts.filter(p => p.category === 'business').map(renderCard).join('');
+    }
+
+    function renderCard(post) {
+      return `
+        <a href="blog/${post.slug}.html" class="card">
+          <img src="${post.image}" alt="${post.title}" class="card-image">
+          <div class="card-overlay"></div>
+          <span class="card-category ${post.category}">${post.category.charAt(0).toUpperCase() + post.category.slice(1)}</span>
+          <div class="card-content">
+            <h3 class="card-title">${post.title}</h3>
+            <div class="card-meta">
+              <span>⏱ ${post.readTime}</span>
+              <span>${post.date}</span>
+            </div>
+          </div>
+        </a>
+      `;
+    }
+  </script>
+</body>
+</html>

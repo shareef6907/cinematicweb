@@ -63,6 +63,41 @@ export default function Footer() {
               </li>
               <li>Manama, Bahrain</li>
             </ul>
+            
+            <h3 className="text-lg font-bold mb-4 mt-6 text-white">Sister Companies</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <a href="https://www.bahrainnights.com" target="_blank" rel="noopener noreferrer" className="hover:text-rose-400 transition-colors">
+                  🌙 BahrainNights.com
+                </a>
+              </li>
+              <li>
+                <a href="https://www.eventsbahrain.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">
+                  🎪 EventsBahrain.com
+                </a>
+              </li>
+              <li>
+                <a href="https://www.filmproductionbahrain.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-400 transition-colors">
+                  🎬 FilmProductionBahrain.com
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Sister Companies Banner */}
+        <div className="border-t border-white/10 pt-8 pb-4 mb-4">
+          <p className="text-center text-sm text-gray-500 mb-4">Part of the Bahrain Nights family</p>
+          <div className="flex flex-wrap justify-center gap-6 text-sm">
+            <a href="https://www.bahrainnights.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-rose-400 transition-colors">
+              🌙 Events & Nightlife Guide
+            </a>
+            <a href="https://www.eventsbahrain.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">
+              🎪 Event Equipment Rental
+            </a>
+            <a href="https://www.filmproductionbahrain.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-400 transition-colors">
+              🎬 Video Production
+            </a>
           </div>
         </div>
 

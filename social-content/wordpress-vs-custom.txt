@@ -1,0 +1,71 @@
+⚔️ WORDPRESS vs CUSTOM CODE ⚔️
+
+The age-old debate. Here's the HONEST truth about both 👇
+
+━━━━━━━━━━━━━━━━━
+
+WORDPRESS 📦
+
+PROS:
+✅ Quick to launch
+✅ Thousands of plugins
+✅ Lower upfront cost
+✅ Easy content updates
+✅ Huge community support
+
+CONS:
+❌ Plugin bloat = slow site
+❌ Security vulnerabilities
+❌ Limited customization
+❌ Looks like every other site
+❌ Monthly plugin fees add up
+
+━━━━━━━━━━━━━━━━━
+
+CUSTOM CODE 🔧
+
+PROS:
+✅ Lightning-fast performance
+✅ 100% custom design
+✅ No unnecessary bloat
+✅ Maximum security
+✅ Scales with your business
+
+CONS:
+❌ Higher initial investment
+❌ Longer development time
+❌ Need a developer for changes
+❌ More planning required
+
+━━━━━━━━━━━━━━━━━
+
+SO WHICH SHOULD YOU CHOOSE?
+
+👉 WordPress: Blog, small business, need it FAST
+👉 Custom: Serious brand, performance matters, unique vision
+
+━━━━━━━━━━━━━━━━━
+
+At CinematicWebWorks, we do BOTH.
+
+We'll recommend what's right for YOUR goals — not just push one solution.
+
+Have questions? DM us! 📩
+
+---
+
+HASHTAGS:
+#CinematicWebWorks #WordPress #CustomWebsite #WebDevelopment #WebDesign #WordPressVsCustom #WebsiteTips #TechAdvice #WebDevLife #WebDesignTips #DeveloperLife #BusinessWebsite #WebsiteBuilding #ReactJS #NextJS #WebsiteComparison #DigitalStrategy #SmallBusinessTips #WebsiteAdvice #HonestAdvice
+
+---
+
+POST TYPE: Carousel (5-6 slides)
+
+VISUALS NEEDED:
+- Slide 1: VS graphic with WordPress logo vs code brackets
+- Slide 2: WordPress pros/cons split design
+- Slide 3: Custom code pros/cons split design
+- Slide 4: Decision flowchart or comparison chart
+- Slide 5: "We do both" with portfolio examples
+- Slide 6: CTA
+- Use clear iconography and balanced design

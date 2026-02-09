@@ -1,0 +1,64 @@
+🌟 CLIENT SPOTLIGHT: BahrainNights 🌟
+
+From concept to launch — here's how we built Bahrain's go-to nightlife guide! 🇧🇭✨
+
+━━━━━━━━━━━━━━━━━
+
+THE BRIEF:
+
+Create a platform that helps people discover the best events, restaurants, and nightlife in Bahrain.
+
+━━━━━━━━━━━━━━━━━
+
+THE CHALLENGE:
+
+📍 Needed real-time event updates
+📍 Had to look stunning on mobile
+📍 Required easy content management
+📍 Must load FAST with lots of images
+📍 SEO-optimized for local searches
+
+━━━━━━━━━━━━━━━━━
+
+OUR SOLUTION:
+
+⚡ Next.js for lightning-fast performance
+🎨 Custom design with Bahrain's vibe
+📱 Mobile-first responsive layout
+🔧 Headless CMS for easy updates
+🔍 Full SEO optimization
+
+━━━━━━━━━━━━━━━━━
+
+THE RESULTS:
+
+📈 10K+ monthly visitors
+⭐ Top 3 ranking for "Bahrain events"
+📱 65% mobile traffic
+💬 Active community engagement
+🚀 Continuously growing!
+
+━━━━━━━━━━━━━━━━━
+
+Want these results for YOUR project?
+
+Let's talk → Link in bio 🔗
+
+---
+
+HASHTAGS:
+#CinematicWebWorks #ClientSpotlight #CaseStudy #WebDesign #WebDevelopment #NextJS #BahrainBusiness #PortfolioWork #WebsiteDesign #DigitalSuccess #ClientWork #WebDesignCase #SuccessStory #FreelanceWork #AgencyLife #WebDesignBahrain #TechStartup #DigitalTransformation #WebsiteResults #ClientSuccess
+
+---
+
+POST TYPE: Carousel (6-7 slides)
+
+VISUALS NEEDED:
+- Slide 1: BahrainNights logo + "Client Spotlight" branding
+- Slide 2: The brief/challenge overview
+- Slide 3: Design mockups (desktop + mobile)
+- Slide 4: Technical stack icons
+- Slide 5: Results with metrics
+- Slide 6: Live website screenshots
+- Slide 7: CTA
+- Use actual screenshots from the live site

@@ -611,12 +611,12 @@
             <option value="web-development">Web Development</option>
             <option value="other">Other</option>
           </select>
-          <select name="budget">
+          <select name="budget" id="budgetSelect">
             <option value="" disabled selected>Budget Range</option>
-            <option value="500-1000">BD 500 - BD 1,000</option>
-            <option value="1000-2000">BD 1,000 - BD 2,000</option>
-            <option value="2000-5000">BD 2,000 - BD 5,000</option>
-            <option value="5000+">BD 5,000+</option>
+            <option value="500-1000|BHD">BHD 500 - BHD 1,000</option>
+            <option value="1000-2000|BHD">BHD 1,000 - BHD 2,000</option>
+            <option value="2000-5000|BHD">BHD 2,000 - BHD 5,000</option>
+            <option value="5000+|BHD">BHD 5,000+</option>
           </select>
         </div>
         <div class="form-row full">
@@ -777,21 +777,104 @@
     reveals.forEach(function(el) { observer.observe(el); });
   </script>
 <script>
+// Currency configuration by country
+var currencyConfig = {
+  BH: { code: 'BHD', symbol: 'BHD', ranges: ['500-1000', '1000-2000', '2000-5000', '5000+'], labels: ['BHD 500 - BHD 1,000', 'BHD 1,000 - BHD 2,000', 'BHD 2,000 - BHD 5,000', 'BHD 5,000+'], toBHD: 1 },
+  AE: { code: 'AED', symbol: 'AED', ranges: ['5000-10000', '10000-20000', '20000-50000', '50000+'], labels: ['AED 5,000 - AED 10,000', 'AED 10,000 - AED 20,000', 'AED 20,000 - AED 50,000', 'AED 50,000+'], toBHD: 0.1 },
+  SA: { code: 'SAR', symbol: 'SAR', ranges: ['5000-10000', '10000-20000', '20000-50000', '50000+'], labels: ['SAR 5,000 - SAR 10,000', 'SAR 10,000 - SAR 20,000', 'SAR 20,000 - SAR 50,000', 'SAR 50,000+'], toBHD: 0.1 },
+  QA: { code: 'QAR', symbol: 'QAR', ranges: ['5000-10000', '10000-20000', '20000-50000', '50000+'], labels: ['QAR 5,000 - QAR 10,000', 'QAR 10,000 - QAR 20,000', 'QAR 20,000 - QAR 50,000', 'QAR 50,000+'], toBHD: 0.1 },
+  KW: { code: 'KWD', symbol: 'KWD', ranges: ['400-800', '800-1500', '1500-4000', '4000+'], labels: ['KWD 400 - KWD 800', 'KWD 800 - KWD 1,500', 'KWD 1,500 - KWD 4,000', 'KWD 4,000+'], toBHD: 1.22 },
+  OM: { code: 'OMR', symbol: 'OMR', ranges: ['500-1000', '1000-2000', '2000-5000', '5000+'], labels: ['OMR 500 - OMR 1,000', 'OMR 1,000 - OMR 2,000', 'OMR 2,000 - OMR 5,000', 'OMR 5,000+'], toBHD: 0.98 },
+  GB: { code: 'GBP', symbol: '£', ranges: ['1000-2000', '2000-5000', '5000-10000', '10000+'], labels: ['£1,000 - £2,000', '£2,000 - £5,000', '£5,000 - £10,000', '£10,000+'], toBHD: 0.48 },
+  US: { code: 'USD', symbol: '$', ranges: ['1500-3000', '3000-7000', '7000-15000', '15000+'], labels: ['$1,500 - $3,000', '$3,000 - $7,000', '$7,000 - $15,000', '$15,000+'], toBHD: 0.38 },
+  CA: { code: 'USD', symbol: '$', ranges: ['1500-3000', '3000-7000', '7000-15000', '15000+'], labels: ['$1,500 - $3,000', '$3,000 - $7,000', '$7,000 - $15,000', '$15,000+'], toBHD: 0.38 }
+};
+var detectedCountry = 'BH';
+var detectedCurrency = currencyConfig.BH;
+
+// Update budget dropdown based on country
+function updateBudgetDropdown(countryCode) {
+  var config = currencyConfig[countryCode] || currencyConfig.BH;
+  detectedCurrency = config;
+  var select = document.getElementById('budgetSelect');
+  if (!select) return;
+  select.innerHTML = '<option value="" disabled selected>Budget Range</option>';
+  for (var i = 0; i < config.ranges.length; i++) {
+    var opt = document.createElement('option');
+    opt.value = config.ranges[i] + '|' + config.code;
+    opt.textContent = config.labels[i];
+    select.appendChild(opt);
+  }
+}
+
+// Detect country via IP geolocation
+function detectCountry() {
+  // Try IP-based detection first
+  fetch('https://ip-api.com/json/?fields=countryCode')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.countryCode && currencyConfig[data.countryCode]) {
+        detectedCountry = data.countryCode;
+        updateBudgetDropdown(data.countryCode);
+      }
+    })
+    .catch(function() {
+      // Fallback: try navigator.language
+      var lang = navigator.language || navigator.userLanguage || '';
+      var countryFromLang = lang.split('-')[1];
+      if (countryFromLang && currencyConfig[countryFromLang.toUpperCase()]) {
+        detectedCountry = countryFromLang.toUpperCase();
+        updateBudgetDropdown(detectedCountry);
+      }
+    });
+}
+
+// Convert budget to BHD equivalent
+function convertToBHD(budgetValue, currencyCode) {
+  var config = null;
+  for (var key in currencyConfig) {
+    if (currencyConfig[key].code === currencyCode) { config = currencyConfig[key]; break; }
+  }
+  if (!config) return budgetValue;
+  var parts = budgetValue.split('-');
+  if (parts.length === 2) {
+    var low = Math.round(parseFloat(parts[0]) * config.toBHD);
+    var high = Math.round(parseFloat(parts[1]) * config.toBHD);
+    return 'BHD ' + low.toLocaleString() + ' - BHD ' + high.toLocaleString();
+  } else {
+    var val = parseFloat(budgetValue.replace('+', ''));
+    return 'BHD ' + Math.round(val * config.toBHD).toLocaleString() + '+';
+  }
+}
+
+// Run detection on page load
+detectCountry();
+
 function sendEmail(form) {
   var name = form.name.value;
   var email = form.email.value;
   var phone = form.phone.value || "Not provided";
   var service = form.service.value;
-  var budget = form.budget.value || "Not specified";
+  var budgetRaw = form.budget.value || "";
   var message = form.message.value;
+  
+  // Parse budget value and currency
+  var budgetParts = budgetRaw.split('|');
+  var budgetValue = budgetParts[0] || "Not specified";
+  var budgetCurrency = budgetParts[1] || "BHD";
+  var budgetDisplay = form.budget.options[form.budget.selectedIndex]?.text || "Not specified";
+  var budgetBHD = convertToBHD(budgetValue, budgetCurrency);
+  
   var subject = "Website Inquiry: " + service + " from " + name;
   var body = "Name: " + name + "\n";
   body += "Email: " + email + "\n";
   body += "Phone: " + phone + "\n";
   body += "Service: " + service + "\n";
-  body += "Budget: " + budget + "\n\n";
+  body += "Budget: " + budgetDisplay + "\n";
+  body += "Budget (BHD equivalent): " + budgetBHD + "\n";
+  body += "Detected Country: " + detectedCountry + "\n\n";
   body += "Message:\n" + message;
-  window.location.href = "mailto:ceo@bahrainnights.com?subject=" + encodeURIComponent(subject) + "\&body=" + encodeURIComponent(body);
+  window.location.href = "mailto:ceo@bahrainnights.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
   return false;
 }
 </script>

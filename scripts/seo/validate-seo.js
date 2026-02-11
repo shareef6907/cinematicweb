@@ -20,8 +20,11 @@ const CONFIG = {
     /^node_modules/,
     /^scripts/,
     /^templates/,
+    /^reports/,
     /^\./,
-    /404\.html$/
+    /404\.html$/,
+    /google.*\.html$/,  // Google verification files
+    /blog\/index\.html$/  // Redirect page
   ]
 };
 

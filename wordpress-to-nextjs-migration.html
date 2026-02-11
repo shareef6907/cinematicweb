@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0a0a0a !important;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/png" href="favicon.png">
+  
+  <title>WordPress to Next.js Migration | Speed & SEO Upgrade</title>
+  <meta name="description" content="Migrate your WordPress site to Next.js for 10x faster performance, better SEO, and lower hosting costs. Keep your content, lose the bloat. Migration services in Bahrain.">
+  <meta name="keywords" content="wordpress to nextjs migration, wordpress migration bahrain, nextjs conversion, wordpress to react, headless wordpress, static site migration">
+  <meta name="author" content="Cinematic Web Works">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cinematicwebworks.com/wordpress-to-nextjs-migration.html">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cinematicwebworks.com/wordpress-to-nextjs-migration.html">
+  <meta property="og:title" content="WordPress to Next.js Migration | Speed & SEO Upgrade">
+  <meta property="og:description" content="Migrate from WordPress to Next.js for faster performance, better SEO, and lower costs.">
+  <meta property="og:image" content="https://cinematicwebworks.com/og-image.png">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "WordPress to Next.js Migration",
+    "description": "Professional website migration service from WordPress to Next.js for improved performance, SEO, and user experience.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Cinematic Web Works",
+      "telephone": "+97339007750",
+      "email": "ceo@bahrainnights.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Manama", "addressCountry": "BH" }
+    },
+    "areaServed": { "@type": "Country", "name": "Bahrain" },
+    "serviceType": "Website Migration"
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why should I migrate from WordPress to Next.js?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Next.js offers significant advantages over WordPress: 10x faster page loads (improving SEO and conversions), no database or PHP vulnerabilities to patch, much lower hosting costs ($0-20/month vs $50-200/month for managed WordPress), better Core Web Vitals scores, and a modern development experience that makes future updates easier."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does WordPress to Next.js migration cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Migration costs depend on your site complexity. A simple brochure website (5-10 pages) costs BD 500-800. A medium business site with blog (20-50 pages) costs BD 800-1,500. Complex sites with e-commerce, membership, or custom functionality range BD 1,500-3,000+. We provide exact quotes after reviewing your current site."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will I lose my SEO rankings after migration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No — when done properly, migration actually improves SEO. We implement proper 301 redirects for all URLs, preserve all meta data and structured markup, and the performance improvements from Next.js typically boost rankings. We've seen clients gain rankings after migration due to improved Core Web Vitals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does migration take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A typical migration takes 2-4 weeks depending on site size. Week 1: audit and planning. Week 2-3: development and content migration. Week 4: testing, redirects, and launch. Complex sites may take 4-6 weeks. We never rush migrations — proper execution is critical for preserving SEO."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I still update content easily without WordPress?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We can set up a headless CMS (like Sanity, Contentful, or even headless WordPress) that gives you an easy editing interface while serving your site through Next.js. For simpler sites, we can use Markdown files or Notion as a content source. You won't lose the ability to edit your content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to my WordPress plugins?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Plugin functionality is rebuilt natively in Next.js or replaced with better alternatives. Contact forms become serverless functions. SEO plugins are replaced with Next.js SEO components. Analytics and tracking are implemented directly. Most plugin functionality can be replicated with better performance and no security risks."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cinematicwebworks.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://cinematicwebworks.com/services/" },
+      { "@type": "ListItem", "position": 3, "name": "WordPress to Next.js Migration", "item": "https://cinematicwebworks.com/wordpress-to-nextjs-migration.html" }
+    ]
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #2a2a2a #0a0a0a; background: #0a0a0a !important; }
+    body { font-family: 'DM Sans', sans-serif; background: #0a0a0a !important; color: #c8c8c8 !important; overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 28px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s ease; }
+    nav.scrolled { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(20px); padding: 18px 50px; }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: #f0f0f0 !important; text-decoration: none; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { color: #888 !important; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s ease; }
+    .nav-links a:hover { color: #f0f0f0 !important; }
+    .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #c9a84c !important; text-decoration: none; border: 1px solid #c9a84c; padding: 10px 28px; transition: all 0.3s ease; }
+    .nav-cta:hover { background: #c9a84c; color: #0a0a0a !important; }
+    
+    .hero { min-height: 60vh; position: relative; display: flex; align-items: center; justify-content: center; background: #0a0a0a !important; }
+    .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 20% 50%, rgba(76,139,201,0.06) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.04) 0%, transparent 50%); }
+    .hero-content { text-align: center; z-index: 11; max-width: 900px; padding: 120px 40px 60px; }
+    .hero-eyebrow { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 8px; color: #c9a84c !important; margin-bottom: 30px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 56px); font-weight: 900; line-height: 1.1; color: #f0f0f0 !important; margin-bottom: 20px; }
+    .hero-title em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
+    .hero-subtitle { font-size: 18px; color: #888 !important; max-width: 600px; margin: 0 auto 40px; }
+    
+    .section { padding: 80px 50px; max-width: 1200px; margin: 0 auto; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #f0f0f0 !important; margin-bottom: 20px; }
+    .section-title em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
+    
+    .content-block { margin-bottom: 60px; }
+    .content-block h2 { font-family: 'Playfair Display', serif; font-size: 28px; color: #f0f0f0 !important; margin-bottom: 20px; }
+    .content-block h3 { font-size: 20px; color: #c9a84c !important; margin: 30px 0 15px; }
+    .content-block p { margin-bottom: 20px; font-size: 16px; color: #a0a0a0 !important; }
+    .content-block ul { margin: 20px 0; padding-left: 25px; }
+    .content-block li { margin-bottom: 12px; color: #a0a0a0 !important; }
+    .content-block li strong { color: #f0f0f0 !important; }
+    
+    .comparison-table { width: 100%; margin: 40px 0; border-collapse: collapse; }
+    .comparison-table th, .comparison-table td { padding: 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .comparison-table th { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 2px; color: #c9a84c !important; background: rgba(255,255,255,0.02); }
+    .comparison-table td { color: #888 !important; font-size: 15px; }
+    .comparison-table td:first-child { color: #f0f0f0 !important; font-weight: 500; }
+    .comparison-table .better { color: #4ade80 !important; }
+    .comparison-table .worse { color: #f87171 !important; }
+    
+    .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
+    .benefit-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 30px; }
+    .benefit-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 2px; color: #c9a84c !important; margin-bottom: 15px; }
+    .benefit-card p { font-size: 15px; color: #888 !important; }
+    
+    .process-steps { margin: 40px 0; }
+    .process-step { display: flex; gap: 30px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .step-number { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: #c9a84c !important; opacity: 0.5; min-width: 60px; }
+    .step-content h4 { font-size: 20px; color: #f0f0f0 !important; margin-bottom: 10px; }
+    .step-content p { color: #888 !important; font-size: 15px; }
+    
+    .faq-section { margin: 60px 0; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); padding: 25px 0; }
+    .faq-question { font-size: 18px; font-weight: 600; color: #f0f0f0 !important; margin-bottom: 12px; }
+    .faq-answer { color: #888 !important; font-size: 15px; line-height: 1.8; }
+    
+    .cta-section { background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(10,10,10,1) 100%); padding: 80px 50px; text-align: center; margin: 60px 0; border: 1px solid rgba(201,168,76,0.2); }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: #f0f0f0 !important; margin-bottom: 20px; }
+    .cta-section p { color: #888 !important; margin-bottom: 30px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta-button { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; background: #c9a84c; color: #0a0a0a !important; text-decoration: none; padding: 18px 50px; transition: all 0.3s ease; }
+    .cta-button:hover { background: #f0f0f0; }
+    
+    .internal-links { background: rgba(255,255,255,0.02); padding: 40px; margin: 60px 0; border: 1px solid rgba(255,255,255,0.05); }
+    .internal-links h3 { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; color: #c9a84c !important; margin-bottom: 20px; }
+    .internal-links ul { display: flex; flex-wrap: wrap; gap: 15px; list-style: none; }
+    .internal-links a { color: #888 !important; text-decoration: none; font-size: 14px; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+    .internal-links a:hover { border-color: #c9a84c; color: #c9a84c !important; }
+    
+    footer { background: #050505; padding: 60px 50px 30px; margin-top: 80px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+    .footer-col h4 { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #f0f0f0 !important; margin-bottom: 20px; }
+    .footer-col a { display: block; color: #666 !important; text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color 0.3s ease; }
+    .footer-col a:hover { color: #c9a84c !important; }
+    .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #444 !important; }
+    .sister-sites { display: flex; gap: 20px; }
+    .sister-sites a { color: #444 !important; text-decoration: none; transition: color 0.3s ease; }
+    .sister-sites a:hover { color: #c9a84c !important; }
+    
+    @media (max-width: 768px) {
+      nav { padding: 20px; }
+      .nav-links { display: none; }
+      .section { padding: 60px 20px; }
+      .hero-content { padding: 100px 20px 40px; }
+      .cta-section { padding: 60px 20px; }
+      .comparison-table { font-size: 14px; }
+      .comparison-table th, .comparison-table td { padding: 12px 8px; }
+      .process-step { flex-direction: column; gap: 15px; }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a href="/" class="nav-logo">CINEMATIC WEB WORKS</a>
+    <ul class="nav-links">
+      <li><a href="/services/custom-web-development.html">Services</a></li>
+      <li><a href="/industries.html">Industries</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+    <a href="https://wa.me/97339007750?text=Hi,%20I'm%20interested%20in%20migrating%20my%20WordPress%20site%20to%20Next.js" class="nav-cta">Get Quote</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">WORDPRESS TO NEXT.JS MIGRATION</p>
+      <h1 class="hero-title">Leave WordPress Behind. <em>Embrace the Future.</em></h1>
+      <p class="hero-subtitle">Migrate to Next.js for 10x faster performance, better SEO, and dramatically lower hosting costs. Keep your content, lose the bloat.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-block">
+      <h2>Why Migrate from WordPress to Next.js?</h2>
+      <p>WordPress powers 40% of the web — but that doesn't mean it's the best choice for your business. If you're struggling with slow page loads, constant security updates, expensive managed hosting, or an outdated design, it might be time to upgrade.</p>
+      <p>Next.js is a modern React framework that generates lightning-fast static websites. Your pages are pre-built at deploy time, served from a global CDN, and load in milliseconds. No database queries, no PHP execution, no security patches — just pure speed.</p>
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>FEATURE</th>
+          <th>WORDPRESS</th>
+          <th>NEXT.JS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Page Load Speed</td>
+          <td class="worse">2-5 seconds</td>
+          <td class="better">0.2-0.5 seconds</td>
+        </tr>
+        <tr>
+          <td>Hosting Cost</td>
+          <td class="worse">$50-200/month (managed)</td>
+          <td class="better">$0-20/month (Vercel/Netlify)</td>
+        </tr>
+        <tr>
+          <td>Security Updates</td>
+          <td class="worse">Weekly plugin updates</td>
+          <td class="better">None required (static files)</td>
+        </tr>
+        <tr>
+          <td>Hacking Risk</td>
+          <td class="worse">High (database, PHP, plugins)</td>
+          <td class="better">Near zero (no database)</td>
+        </tr>
+        <tr>
+          <td>Core Web Vitals</td>
+          <td class="worse">Often failing</td>
+          <td class="better">Near perfect scores</td>
+        </tr>
+        <tr>
+          <td>SEO Performance</td>
+          <td>Good (with plugins)</td>
+          <td class="better">Excellent (built-in)</td>
+        </tr>
+        <tr>
+          <td>Scalability</td>
+          <td class="worse">Needs caching, CDN</td>
+          <td class="better">Infinite (static + CDN)</td>
+        </tr>
+        <tr>
+          <td>Content Editing</td>
+          <td class="better">Familiar admin panel</td>
+          <td>Headless CMS or Markdown</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <h4>10X FASTER LOADING</h4>
+        <p>Static pages served from edge CDNs load in under 500ms. Faster sites = better SEO rankings and higher conversion rates.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>90% LOWER HOSTING COSTS</h4>
+        <p>Host on Vercel or Netlify for free, or pay $20/month for unlimited traffic. No expensive managed WordPress hosting needed.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>ZERO SECURITY PATCHES</h4>
+        <p>No WordPress core updates, no plugin vulnerabilities, no database to hack. Static files can't be compromised.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>PERFECT CORE WEB VITALS</h4>
+        <p>Google's ranking factors are baked in: fast LCP, no CLS, instant interactivity. SEO improvements come automatically.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>MODERN DEVELOPMENT</h4>
+        <p>React components, TypeScript, Git version control. Future updates and features are easier to implement.</p>
+      </div>
+      <div class="benefit-card">
+        <h4>INFINITE SCALABILITY</h4>
+        <p>Handle millions of visitors without breaking a sweat. Static sites don't have database bottlenecks.</p>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h2>Our Migration Process</h2>
+      <p>We've migrated dozens of WordPress sites to Next.js. Here's how we ensure a smooth transition:</p>
+    </div>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h4>Site Audit & Planning</h4>
+          <p>We analyze your current WordPress site: pages, posts, URLs, plugins, and functionality. We map out exactly what needs to be rebuilt and plan the migration timeline.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h4>Content Export & Restructure</h4>
+          <p>We export all your content and organize it for the new system. This might be Markdown files, a headless CMS, or even keeping WordPress as a headless backend.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h4>Design & Development</h4>
+          <p>We rebuild your site in Next.js — either matching your current design or upgrading to a new look. Every page, every component, optimized for speed.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h4>SEO Preservation</h4>
+          <p>We set up 301 redirects for all URLs, migrate meta tags and schema markup, and ensure Google sees the new site as a continuation of the old one.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="step-number">05</div>
+        <div class="step-content">
+          <h4>Testing & Launch</h4>
+          <p>Comprehensive testing across devices and browsers. We verify all redirects work, all content is in place, and performance meets our standards before going live.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block">
+      <h3>What About Content Editing?</h3>
+      <p>One common concern: "I like how easy WordPress is to edit." Good news — you don't have to give that up. We have multiple options:</p>
+      <ul>
+        <li><strong>Headless WordPress</strong> — Keep using the WordPress admin panel for editing. Next.js pulls content from WordPress via API. Best of both worlds.</li>
+        <li><strong>Headless CMS (Sanity, Contentful)</strong> — Modern editing interfaces designed for structured content. Often easier than WordPress.</li>
+        <li><strong>Notion as CMS</strong> — For simpler sites, we can use Notion as your content database. Edit in Notion, site updates automatically.</li>
+        <li><strong>Markdown + Git</strong> — For tech-savvy teams, content lives in markdown files. Version controlled and developer-friendly.</li>
+      </ul>
+      
+      <h3>What Happens to My Plugins?</h3>
+      <p>Plugin functionality is rebuilt natively or replaced with better alternatives:</p>
+      <ul>
+        <li><strong>Yoast/RankMath</strong> → Built-in Next.js SEO components (better control, no bloat)</li>
+        <li><strong>Contact Form 7</strong> → Serverless form handlers (more reliable, no spam)</li>
+        <li><strong>WooCommerce</strong> → Shopify or custom e-commerce (faster, more features)</li>
+        <li><strong>Page Builders</strong> → React components (cleaner code, better performance)</li>
+        <li><strong>Caching Plugins</strong> → Not needed (sites are pre-built and cached by default)</li>
+      </ul>
+    </div>
+
+    <div class="faq-section">
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">Why should I migrate from WordPress to Next.js?</div>
+        <div class="faq-answer">Next.js offers significant advantages: 10x faster page loads (improving SEO and conversions), no database or PHP vulnerabilities to patch, much lower hosting costs ($0-20/month vs $50-200/month for managed WordPress), better Core Web Vitals scores, and a modern development experience that makes future updates easier.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How much does WordPress to Next.js migration cost?</div>
+        <div class="faq-answer">Migration costs depend on site complexity. A simple brochure website (5-10 pages) costs BD 500-800. A medium business site with blog (20-50 pages) costs BD 800-1,500. Complex sites with e-commerce, membership, or custom functionality range BD 1,500-3,000+. We provide exact quotes after reviewing your current site.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Will I lose my SEO rankings after migration?</div>
+        <div class="faq-answer">No — when done properly, migration actually improves SEO. We implement proper 301 redirects for all URLs, preserve all meta data and structured markup, and the performance improvements from Next.js typically boost rankings. We've seen clients gain rankings after migration due to improved Core Web Vitals.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How long does migration take?</div>
+        <div class="faq-answer">A typical migration takes 2-4 weeks depending on site size. Week 1: audit and planning. Week 2-3: development and content migration. Week 4: testing, redirects, and launch. Complex sites may take 4-6 weeks. We never rush migrations — proper execution is critical for preserving SEO.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Can I still update content easily without WordPress?</div>
+        <div class="faq-answer">Yes! We can set up a headless CMS (like Sanity, Contentful, or even headless WordPress) that gives you an easy editing interface while serving your site through Next.js. For simpler sites, we can use Markdown files or Notion as a content source. You won't lose the ability to edit your content.</div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">What happens to my WordPress plugins?</div>
+        <div class="faq-answer">Plugin functionality is rebuilt natively in Next.js or replaced with better alternatives. Contact forms become serverless functions. SEO plugins are replaced with Next.js SEO components. Analytics and tracking are implemented directly. Most plugin functionality can be replicated with better performance and no security risks.</div>
+      </div>
+    </div>
+
+    <div class="internal-links">
+      <h3>RELATED SERVICES</h3>
+      <ul>
+        <li><a href="/nextjs-developer-bahrain.html">Next.js Development</a></li>
+        <li><a href="/react-developer-bahrain.html">React Development</a></li>
+        <li><a href="/website-redesign-bahrain.html">Website Redesign</a></li>
+        <li><a href="/web-hosting-bahrain.html">Web Hosting</a></li>
+        <li><a href="/seo-services-bahrain.html">SEO Services</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to Upgrade from WordPress?</h2>
+    <p>Send us your WordPress site URL and we'll provide a free migration assessment with timeline and cost estimate.</p>
+    <a href="https://wa.me/97339007750?text=Hi,%20I'm%20interested%20in%20migrating%20my%20WordPress%20site%20to%20Next.js.%20My%20site%20is:" class="cta-button">GET FREE ASSESSMENT</a>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>SERVICES</h4>
+        <a href="/web-development-bahrain.html">Web Development</a>
+        <a href="/nextjs-developer-bahrain.html">Next.js Development</a>
+        <a href="/wordpress-to-nextjs-migration.html">WordPress Migration</a>
+        <a href="/website-maintenance-bahrain.html">Maintenance</a>
+      </div>
+      <div class="footer-col">
+        <h4>TECHNOLOGIES</h4>
+        <a href="/nextjs-developer-bahrain.html">Next.js</a>
+        <a href="/react-developer-bahrain.html">React</a>
+        <a href="#">TypeScript</a>
+        <a href="#">Headless CMS</a>
+      </div>
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <a href="/about.html">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://wa.me/97339007750">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <a href="mailto:ceo@bahrainnights.com">ceo@bahrainnights.com</a>
+        <a href="https://wa.me/97339007750">+973 3900 7750</a>
+        <a href="#">Manama, Bahrain</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cinematic Web Works. Part of the Cinematic Group.</span>
+      <div class="sister-sites">
+        <a href="https://bahrainnights.com">BahrainNights</a>
+        <a href="https://filmproductionbahrain.com">Film Production</a>
+        <a href="https://eventsbahrain.com">Events Bahrain</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

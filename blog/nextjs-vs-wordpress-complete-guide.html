@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#0a0a0a !important;">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  
+  <title>Next.js vs WordPress: Complete 2026 Guide | CWW Blog</title>
+  <meta name="description" content="Comprehensive comparison of Next.js and WordPress in 2026. Performance, SEO, security, cost analysis. Learn which platform is right for your business.">
+  <meta name="keywords" content="nextjs vs wordpress, wordpress alternative, next.js benefits, react framework, modern web development, static site generator">
+  <meta name="author" content="Cinematic Web Works">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cinematicwebworks.com/blog/nextjs-vs-wordpress-complete-guide.html">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://cinematicwebworks.com/blog/nextjs-vs-wordpress-complete-guide.html">
+  <meta property="og:title" content="Next.js vs WordPress: Complete 2026 Guide">
+  <meta property="og:description" content="Comprehensive comparison of Next.js and WordPress. Performance, SEO, security, and cost analysis.">
+  <meta property="og:image" content="https://cinematicwebworks.com/og-image.png">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Next.js vs WordPress: Complete 2026 Guide for Modern Businesses",
+    "description": "Comprehensive comparison of Next.js and WordPress in 2026. Performance benchmarks, SEO capabilities, security analysis, and total cost of ownership.",
+    "url": "https://cinematicwebworks.com/blog/nextjs-vs-wordpress-complete-guide.html",
+    "datePublished": "2026-02-11",
+    "dateModified": "2026-02-11",
+    "author": {
+      "@type": "Organization",
+      "name": "Cinematic Web Works",
+      "url": "https://cinematicwebworks.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cinematic Web Works",
+      "url": "https://cinematicwebworks.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cinematicwebworks.com/favicon.png"
+      }
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cinematicwebworks.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cinematicwebworks.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": "Next.js vs WordPress Guide", "item": "https://cinematicwebworks.com/blog/nextjs-vs-wordpress-complete-guide.html" }
+    ]
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #2a2a2a #0a0a0a; background: #0a0a0a !important; }
+    body { font-family: 'DM Sans', sans-serif; background: #0a0a0a !important; color: #c8c8c8 !important; overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.8; }
+    nav { position: fixed; top: 0; left: 0; width: 100%; padding: 28px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s ease; }
+    nav.scrolled { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(20px); padding: 18px 50px; }
+    .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: #f0f0f0 !important; text-decoration: none; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { color: #888 !important; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s ease; }
+    .nav-links a:hover { color: #f0f0f0 !important; }
+    .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #c9a84c !important; text-decoration: none; border: 1px solid #c9a84c; padding: 10px 28px; transition: all 0.3s ease; }
+    .nav-cta:hover { background: #c9a84c; color: #0a0a0a !important; }
+    
+    .article-header { padding: 150px 50px 60px; max-width: 900px; margin: 0 auto; }
+    .article-meta { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 4px; color: #c9a84c !important; margin-bottom: 20px; }
+    .article-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 900; line-height: 1.15; color: #f0f0f0 !important; margin-bottom: 25px; }
+    .article-title em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
+    .article-excerpt { font-size: 20px; color: #888 !important; max-width: 700px; line-height: 1.7; }
+    
+    .article-content { max-width: 800px; margin: 0 auto; padding: 40px 50px 80px; }
+    .article-content h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: #f0f0f0 !important; margin: 50px 0 25px; }
+    .article-content h2 em { font-style: italic; color: #c9a84c !important; font-weight: 400; }
+    .article-content h3 { font-size: 22px; font-weight: 600; color: #f0f0f0 !important; margin: 35px 0 15px; }
+    .article-content p { margin-bottom: 20px; font-size: 17px; color: #a0a0a0 !important; }
+    .article-content strong { color: #f0f0f0 !important; }
+    .article-content em { color: #c9a84c !important; }
+    .article-content ul, .article-content ol { margin: 20px 0 30px 25px; }
+    .article-content li { margin-bottom: 12px; color: #a0a0a0 !important; }
+    .article-content a { color: #c9a84c !important; text-decoration: underline; }
+    .article-content a:hover { color: #f0f0f0 !important; }
+    
+    .comparison-table { width: 100%; margin: 40px 0; border-collapse: collapse; font-size: 15px; }
+    .comparison-table th, .comparison-table td { padding: 18px 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .comparison-table th { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 2px; color: #c9a84c !important; background: rgba(255,255,255,0.02); }
+    .comparison-table td { color: #888 !important; }
+    .comparison-table td:first-child { color: #f0f0f0 !important; font-weight: 500; }
+    .winner { color: #4ade80 !important; font-weight: 600; }
+    .loser { color: #f87171 !important; }
+    
+    .callout { background: rgba(201,168,76,0.08); border-left: 3px solid #c9a84c; padding: 25px 30px; margin: 30px 0; }
+    .callout p { margin: 0; color: #c8c8c8 !important; }
+    .callout strong { color: #c9a84c !important; }
+    
+    .code-block { background: #111; border: 1px solid rgba(255,255,255,0.08); padding: 20px; margin: 25px 0; font-family: monospace; font-size: 14px; color: #888 !important; overflow-x: auto; border-radius: 4px; }
+    
+    .cta-box { background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(10,10,10,1) 100%); border: 1px solid rgba(201,168,76,0.2); padding: 50px 40px; text-align: center; margin: 60px 0; }
+    .cta-box h3 { font-family: 'Playfair Display', serif; font-size: 28px; color: #f0f0f0 !important; margin-bottom: 15px; }
+    .cta-box p { color: #888 !important; margin-bottom: 25px; }
+    .cta-button { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 15px; letter-spacing: 3px; background: #c9a84c; color: #0a0a0a !important; text-decoration: none; padding: 15px 40px; transition: all 0.3s ease; }
+    .cta-button:hover { background: #f0f0f0; }
+    
+    .related-posts { background: rgba(255,255,255,0.02); padding: 40px; margin: 60px 0; border: 1px solid rgba(255,255,255,0.05); }
+    .related-posts h3 { font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 3px; color: #c9a84c !important; margin-bottom: 20px; }
+    .related-posts ul { list-style: none; display: flex; flex-wrap: wrap; gap: 15px; }
+    .related-posts a { color: #888 !important; text-decoration: none; font-size: 14px; padding: 10px 18px; border: 1px solid rgba(255,255,255,0.1); transition: all 0.3s ease; }
+    .related-posts a:hover { border-color: #c9a84c; color: #c9a84c !important; }
+    
+    footer { background: #050505; padding: 60px 50px 30px; margin-top: 80px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+    .footer-col h4 { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #f0f0f0 !important; margin-bottom: 20px; }
+    .footer-col a { display: block; color: #666 !important; text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color 0.3s ease; }
+    .footer-col a:hover { color: #c9a84c !important; }
+    .footer-bottom { max-width: 1200px; margin: 40px auto 0; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: #444 !important; }
+    
+    @media (max-width: 768px) {
+      nav { padding: 20px; }
+      .nav-links { display: none; }
+      .article-header { padding: 120px 20px 40px; }
+      .article-content { padding: 30px 20px 60px; }
+      .comparison-table { font-size: 13px; }
+      .comparison-table th, .comparison-table td { padding: 12px 8px; }
+      .cta-box { padding: 40px 20px; }
+      .footer-content { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar">
+    <a href="/" class="nav-logo">CINEMATIC WEB WORKS</a>
+    <ul class="nav-links">
+      <li><a href="/services/custom-web-development.html">Services</a></li>
+      <li><a href="/industries.html">Industries</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/about.html">About</a></li>
+    </ul>
+    <a href="https://wa.me/97339007750" class="nav-cta">Get Quote</a>
+  </nav>
+
+  <header class="article-header">
+    <p class="article-meta">FEBRUARY 11, 2026 • 12 MIN READ • WEB DEVELOPMENT</p>
+    <h1 class="article-title">Next.js vs WordPress: The Complete <em>2026 Guide</em> for Modern Businesses</h1>
+    <p class="article-excerpt">WordPress powers 40% of the web. But should your business use it in 2026? We break down performance, security, cost, and SEO to help you choose the right platform.</p>
+  </header>
+
+  <article class="article-content">
+    <p>If you're building a new website or considering a redesign, you've probably asked: <strong>"Should I use WordPress or something more modern?"</strong></p>
+    
+    <p>It's a fair question. WordPress has dominated web development for nearly two decades. But the landscape has changed dramatically. Frameworks like Next.js offer capabilities that didn't exist when WordPress was created — and businesses are taking notice.</p>
+    
+    <p>In this guide, we'll compare WordPress and Next.js across every dimension that matters: performance, SEO, security, development experience, and total cost of ownership. By the end, you'll know exactly which platform is right for your business.</p>
+
+    <h2>The <em>Quick Answer</em></h2>
+    
+    <div class="callout">
+      <p><strong>TL;DR:</strong> Use WordPress if you need a simple blog or basic site and want to manage it yourself with minimal technical knowledge. Use Next.js if you care about performance, security, SEO rankings, and want a site that scales effortlessly.</p>
+    </div>
+
+    <h2>What is <em>Next.js?</em></h2>
+    
+    <p>Next.js is a React framework created by Vercel. It lets developers build websites that are:</p>
+    
+    <ul>
+      <li><strong>Static by default</strong> — Pages are pre-built at deploy time, meaning they load instantly</li>
+      <li><strong>Server-rendered when needed</strong> — Dynamic content can still be generated on-demand</li>
+      <li><strong>Optimized automatically</strong> — Images, fonts, and JavaScript are optimized without configuration</li>
+      <li><strong>Edge-deployed</strong> — Content is served from CDN nodes close to users worldwide</li>
+    </ul>
+    
+    <p>Companies like Netflix, TikTok, Twitch, Nike, and Notion use Next.js for their public-facing websites. It's become the go-to choice for businesses that prioritize performance and user experience.</p>
+
+    <h2>The Head-to-Head <em>Comparison</em></h2>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>CRITERIA</th>
+          <th>WORDPRESS</th>
+          <th>NEXT.JS</th>
+          <th>WINNER</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Page Load Speed</td>
+          <td class="loser">2-5 seconds (typical)</td>
+          <td class="winner">0.2-0.5 seconds</td>
+          <td>Next.js</td>
+        </tr>
+        <tr>
+          <td>Hosting Cost (Monthly)</td>
+          <td class="loser">$50-200 (managed)</td>
+          <td class="winner">$0-20 (Vercel/Netlify)</td>
+          <td>Next.js</td>
+        </tr>
+        <tr>
+          <td>Security Updates</td>
+          <td class="loser">Weekly (core + plugins)</td>
+          <td class="winner">None required</td>
+          <td>Next.js</td>
+        </tr>
+        <tr>
+          <td>Hacking Risk</td>
+          <td class="loser">High (database, PHP, plugins)</td>
+          <td class="winner">Near zero (static files)</td>
+          <td>Next.js</td>
+        </tr>
+        <tr>
+          <td>Core Web Vitals</td>
+          <td class="loser">Often failing</td>
+          <td class="winner">Near perfect by default</td>
+          <td>Next.js</td>
+        </tr>
+        <tr>
+          <td>SEO Performance</td>
+          <td>Good (with plugins)</td>
+          <td class="winner">Excellent (built-in)</td>
+          <td>Next.js</td>
+        </tr>
+        <tr>
+          <td>Scalability</td>
+          <td class="loser">Requires caching, CDN</td>
+          <td class="winner">Infinite (static + edge)</td>
+          <td>Next.js</td>
+        </tr>
+        <tr>
+          <td>Content Editing</td>
+          <td class="winner">Familiar admin panel</td>
+          <td>Headless CMS required</td>
+          <td>WordPress</td>
+        </tr>
+        <tr>
+          <td>Plugin Ecosystem</td>
+          <td class="winner">60,000+ plugins</td>
+          <td>npm packages (different model)</td>
+          <td>WordPress</td>
+        </tr>
+        <tr>
+          <td>Developer Availability</td>
+          <td class="winner">Very high</td>
+          <td>Growing rapidly</td>
+          <td>WordPress</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Performance: Why <em>Speed Matters</em></h2>
+    
+    <p>Let's start with the most significant difference: <strong>page load speed</strong>.</p>
+    
+    <p>A typical WordPress site loads in 2-5 seconds. That might not sound bad, but consider:</p>
+    
+    <ul>
+      <li><strong>53% of mobile users</strong> abandon sites that take over 3 seconds to load (Google)</li>
+      <li><strong>Every 100ms of latency</strong> costs Amazon 1% in sales</li>
+      <li><strong>Page speed is a direct ranking factor</strong> in Google's algorithm</li>
+    </ul>
+    
+    <p>A Next.js site typically loads in <strong>under 500 milliseconds</strong>. That's 4-10x faster than WordPress. Here's why:</p>
+    
+    <h3>WordPress: The Database Bottleneck</h3>
+    
+    <p>When someone visits a WordPress page, here's what happens:</p>
+    
+    <ol>
+      <li>Request hits the server</li>
+      <li>PHP executes and queries the MySQL database</li>
+      <li>Database returns content</li>
+      <li>PHP assembles the page</li>
+      <li>Theme and plugins add their code</li>
+      <li>Page is sent to the browser</li>
+      <li>Browser downloads CSS, JS, and images</li>
+      <li>Page finally renders</li>
+    </ol>
+    
+    <p>Every step adds latency. Caching plugins can help, but they're band-aids on a fundamentally slow architecture.</p>
+    
+    <h3>Next.js: Pre-Built Speed</h3>
+    
+    <p>With Next.js static generation:</p>
+    
+    <ol>
+      <li>Request hits a CDN edge node (geographically close to user)</li>
+      <li>Pre-built HTML file is served immediately</li>
+      <li>Page renders instantly</li>
+    </ol>
+    
+    <p>There's no database query, no PHP execution, no server-side processing. The page is already built and waiting on edge servers around the world.</p>
+
+    <h2>Security: The <em>WordPress Problem</em></h2>
+    
+    <p>WordPress security is a constant battle. Consider these statistics:</p>
+    
+    <ul>
+      <li><strong>90% of all hacked CMS sites</strong> run WordPress (Sucuri)</li>
+      <li><strong>52% of WordPress vulnerabilities</strong> come from plugins</li>
+      <li><strong>New vulnerabilities</strong> are discovered weekly</li>
+    </ul>
+    
+    <p>The WordPress ecosystem creates a massive attack surface:</p>
+    
+    <ul>
+      <li>PHP code execution vulnerabilities</li>
+      <li>SQL injection via plugins</li>
+      <li>Cross-site scripting (XSS)</li>
+      <li>Brute-force login attacks</li>
+      <li>Outdated plugin exploits</li>
+    </ul>
+    
+    <p>Keeping WordPress secure requires:</p>
+    
+    <ul>
+      <li>Weekly core updates</li>
+      <li>Weekly plugin updates</li>
+      <li>Security plugins (Wordfence, Sucuri)</li>
+      <li>Managed hosting with firewall</li>
+      <li>Regular malware scans</li>
+      <li>Backup systems</li>
+    </ul>
+    
+    <p><strong>Next.js eliminates all of this.</strong> Static HTML files can't be hacked. There's no database to inject. No PHP to exploit. No plugins with vulnerabilities. The attack surface is essentially zero.</p>
+
+    <h2>SEO: Google's <em>Core Web Vitals</em></h2>
+    
+    <p>In 2021, Google made Core Web Vitals a ranking factor. These metrics measure:</p>
+    
+    <ul>
+      <li><strong>LCP (Largest Contentful Paint)</strong> — How fast the main content loads</li>
+      <li><strong>FID (First Input Delay)</strong> — How quickly the page responds to interaction</li>
+      <li><strong>CLS (Cumulative Layout Shift)</strong> — How stable the page layout is</li>
+    </ul>
+    
+    <p>WordPress sites typically struggle with Core Web Vitals. Common issues:</p>
+    
+    <ul>
+      <li>Slow LCP due to server response time</li>
+      <li>High FID from heavy JavaScript</li>
+      <li>CLS from ads and dynamic content</li>
+    </ul>
+    
+    <p>Next.js sites score near-perfect by default:</p>
+    
+    <ul>
+      <li>LCP under 1 second (static content)</li>
+      <li>FID near zero (minimal JavaScript)</li>
+      <li>CLS minimized (stable layouts)</li>
+    </ul>
+    
+    <p>This directly impacts your Google rankings. Better Core Web Vitals = higher positions = more organic traffic.</p>
+
+    <h2>Cost Analysis: <em>Total Ownership</em></h2>
+    
+    <h3>WordPress Annual Costs</h3>
+    
+    <div class="code-block">
+Managed Hosting:      $100-200/month ($1,200-2,400/year)
+Premium Theme:        $50-100/year
+Essential Plugins:    $200-500/year
+Security Plugin:      $100-300/year
+Backup Solution:      $50-100/year
+Developer Maintenance: $100-500/month ($1,200-6,000/year)
+---
+TOTAL:                $2,800-9,400/year
+    </div>
+    
+    <h3>Next.js Annual Costs</h3>
+    
+    <div class="code-block">
+Vercel Hosting:       $0-20/month ($0-240/year)
+Headless CMS:         $0-200/year (Sanity, Contentful)
+---
+TOTAL:                $0-440/year
+    </div>
+    
+    <p>The difference is stark: <strong>Next.js costs 90% less to operate</strong> than managed WordPress.</p>
+    
+    <p>Yes, initial development of a Next.js site may cost more (custom development vs. installing a theme). But the ongoing savings compound year after year.</p>
+
+    <h2>When WordPress <em>Still Makes Sense</em></h2>
+    
+    <p>WordPress isn't dead. It still makes sense for:</p>
+    
+    <ul>
+      <li><strong>Simple blogs</strong> where you post content regularly and don't need high performance</li>
+      <li><strong>Very tight budgets</strong> where a $50 theme is all you can afford</li>
+      <li><strong>Non-technical users</strong> who need to edit content themselves with no development help</li>
+      <li><strong>Specific plugin requirements</strong> that don't exist in the JavaScript ecosystem</li>
+    </ul>
+    
+    <p>But for businesses that care about performance, SEO rankings, security, and long-term costs — Next.js is the clear winner.</p>
+
+    <h2>The <em>Migration Path</em></h2>
+    
+    <p>Already on WordPress? Migration to Next.js is straightforward:</p>
+    
+    <ol>
+      <li><strong>Export content</strong> from WordPress (posts, pages, media)</li>
+      <li><strong>Choose a headless CMS</strong> (Sanity, Contentful, or even headless WordPress)</li>
+      <li><strong>Build the Next.js frontend</strong> with your existing design or a fresh look</li>
+      <li><strong>Set up redirects</strong> to preserve SEO value</li>
+      <li><strong>Deploy</strong> to Vercel or Netlify</li>
+    </ol>
+    
+    <p>We've migrated dozens of WordPress sites to Next.js. Clients typically see:</p>
+    
+    <ul>
+      <li>10x improvement in page speed</li>
+      <li>50-90% reduction in hosting costs</li>
+      <li>Zero security incidents post-migration</li>
+      <li>Improved Google rankings within 2-3 months</li>
+    </ul>
+
+    <div class="cta-box">
+      <h3>Ready to Upgrade from WordPress?</h3>
+      <p>We'll analyze your current site and provide a free migration assessment with timeline and cost estimate.</p>
+      <a href="https://wa.me/97339007750?text=Hi,%20I'm%20interested%20in%20migrating%20from%20WordPress%20to%20Next.js" class="cta-button">GET FREE ASSESSMENT</a>
+    </div>
+
+    <h2>Conclusion</h2>
+    
+    <p>WordPress revolutionized web publishing. But technology has evolved, and so have user expectations.</p>
+    
+    <p>In 2026, <strong>performance is a competitive advantage</strong>. Visitors expect instant page loads. Google rewards fast sites with higher rankings. And businesses can't afford the security risks and ongoing costs of legacy platforms.</p>
+    
+    <p>Next.js isn't just an alternative to WordPress — it's a fundamental upgrade. Faster. More secure. Cheaper to operate. Better for SEO.</p>
+    
+    <p>The question isn't whether to switch. It's when.</p>
+
+    <div class="related-posts">
+      <h3>RELATED ARTICLES</h3>
+      <ul>
+        <li><a href="/wordpress-to-nextjs-migration.html">WordPress to Next.js Migration Guide</a></li>
+        <li><a href="/nextjs-developer-bahrain.html">Next.js Development Services</a></li>
+        <li><a href="/blog/web-development-cost-bahrain-2026.html">Web Development Costs in 2026</a></li>
+        <li><a href="/seo-services-bahrain.html">SEO Services Bahrain</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>SERVICES</h4>
+        <a href="/web-development-bahrain.html">Web Development</a>
+        <a href="/nextjs-developer-bahrain.html">Next.js Development</a>
+        <a href="/wordpress-to-nextjs-migration.html">WordPress Migration</a>
+        <a href="/ecommerce-website-bahrain.html">E-commerce</a>
+      </div>
+      <div class="footer-col">
+        <h4>RESOURCES</h4>
+        <a href="/blog.html">Blog</a>
+        <a href="/technology.html">Our Stack</a>
+        <a href="/about.html">About Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <a href="mailto:ceo@bahrainnights.com">ceo@bahrainnights.com</a>
+        <a href="https://wa.me/97339007750">+973 3900 7750</a>
+        <a href="#">Manama, Bahrain</a>
+      </div>
+      <div class="footer-col">
+        <h4>SISTER SITES</h4>
+        <a href="https://bahrainnights.com">BahrainNights</a>
+        <a href="https://filmproductionbahrain.com">Film Production</a>
+        <a href="https://eventsbahrain.com">Events Bahrain</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cinematic Web Works. Part of the Cinematic Group.</span>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

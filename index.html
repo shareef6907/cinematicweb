@@ -405,8 +405,8 @@
   <!-- VIDEO REEL -->
   <section class="reel">
     <div class="reel-container reveal" id="reel-container">
-      <video id="showreel-video" playsinline autoplay muted loop preload="auto">
-        <source src="showreel.mp4" type="video/mp4">
+      <video id="showreel-video" playsinline muted loop preload="none" poster="showreel-poster.jpg">
+        <source data-src="showreel.mp4" type="video/mp4">
       </video>
     </div>
   </section>
@@ -461,7 +461,7 @@
           <div class="project-visual-gradient"></div>
           <div class="project-mockup">
             <div class="mockup-bar"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-            <div class="mockup-content"><img src="bahrainnights.png" alt="BahrainNights.com screenshot"></div>
+            <div class="mockup-content"><img loading="lazy" src="bahrainnights.webp" alt="BahrainNights.com screenshot"></div>
           </div>
           <div class="project-visual-label">Featured Project</div>
         </div>
@@ -485,7 +485,7 @@
           <div class="project-visual-gradient"></div>
           <div class="project-mockup">
             <div class="mockup-bar"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
-            <div class="mockup-content"><img src="studentphotos.png" alt="StudentPhotos.com screenshot"></div>
+            <div class="mockup-content"><img loading="lazy" src="studentphotos.webp" alt="StudentPhotos.com screenshot"></div>
           </div>
           <div class="project-visual-label">Featured Project</div>
         </div>
@@ -906,6 +906,30 @@ function sendEmail(form) {
           }
         });
       });
+    });
+  </script>
+
+  <!-- Lazy Load Video for Performance -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('showreel-video');
+      if (video) {
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              const source = video.querySelector('source[data-src]');
+              if (source && source.dataset.src) {
+                source.src = source.dataset.src;
+                source.removeAttribute('data-src');
+                video.load();
+                video.play();
+              }
+              observer.unobserve(video);
+            }
+          });
+        }, { rootMargin: '200px' });
+        observer.observe(video);
+      }
     });
   </script>
 </body>

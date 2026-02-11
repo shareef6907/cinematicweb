@@ -1,0 +1,39 @@
+<!--
+  NAVIGATION TEMPLATE
+  Standard nav with CTA
+-->
+
+<nav id="navbar">
+  <a href="/" class="nav-logo">CINEMATIC WEB WORKS</a>
+  <ul class="nav-links">
+    <li><a href="/services/custom-web-development.html">Services</a></li>
+    <li><a href="/industries.html">Industries</a></li>
+    <li><a href="/technology.html">Technology</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/about.html">About</a></li>
+  </ul>
+  <a href="https://wa.me/97339007750?text=Hi,%20I'm%20interested%20in%20your%20web%20development%20services" class="nav-cta">Get Quote</a>
+</nav>
+
+<style>
+  nav { position: fixed; top: 0; left: 0; width: 100%; padding: 28px 50px; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s ease; }
+  nav.scrolled { background: rgba(10, 10, 10, 0.95) !important; backdrop-filter: blur(20px); padding: 18px 50px; }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 4px; color: #f0f0f0 !important; text-decoration: none; }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a { color: #888 !important; text-decoration: none; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s ease; }
+  .nav-links a:hover { color: #f0f0f0 !important; }
+  .nav-cta { font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px; color: #c9a84c !important; text-decoration: none; border: 1px solid #c9a84c; padding: 10px 28px; transition: all 0.3s ease; }
+  .nav-cta:hover { background: #c9a84c; color: #0a0a0a !important; }
+  
+  @media (max-width: 768px) {
+    nav { padding: 20px; }
+    .nav-links { display: none; }
+    .nav-cta { font-size: 12px; padding: 8px 16px; }
+  }
+</style>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>

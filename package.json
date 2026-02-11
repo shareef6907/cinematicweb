@@ -1,0 +1,21 @@
+{
+  "name": "cinematicwebworks",
+  "version": "1.0.0",
+  "description": "Cinematic Web Works - Premium Web Development Agency",
+  "private": true,
+  "scripts": {
+    "sitemap": "node scripts/seo/generate-sitemap.js",
+    "seo:validate": "node scripts/seo/validate-seo.js",
+    "seo:verbose": "node scripts/seo/validate-seo.js --verbose",
+    "lighthouse": "node scripts/seo/lighthouse-audit.js",
+    "seo:all": "npm run seo:validate && npm run sitemap",
+    "schema": "node scripts/seo/schema-generators.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shareef6907/cinematicweb.git"
+  },
+  "author": "Cinematic Web Works",
+  "license": "UNLICENSED",
+  "homepage": "https://cinematicwebworks.com"
+}

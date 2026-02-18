@@ -1,0 +1,7 @@
+# Cinematic Webworks - Bahrain Nights W.L.L
+# https://cinematicwebworks.com
+
+User-agent: *
+Allow: /
+
+Sitemap: https://cinematicwebworks.com/sitemap.xml
